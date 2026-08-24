@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shutter & Psalm</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: #11110f;
+      color: #f5f2eb;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,.25),
+          rgba(0,0,0,.15) 45%,
+          rgba(0,0,0,.72)
+        ),
+        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2200&q=90")
+        center center / cover no-repeat;
+    }
+
+    .nav {
+      width: 100%;
+      padding: 30px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      font-family: "Bodoni Moda", serif;
+      font-size: 1.35rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: opacity .3s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: .65;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      padding: 0 7vw 10vh;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      font-size: .7rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      opacity: .8;
+    }
+
+    .hero h1 {
+      font-family: "Bodoni Moda", serif;
+      font-size: clamp(4rem, 9vw, 9rem);
+      line-height: .88;
+      font-weight: 400;
+      letter-spacing: -.04em;
+      max-width: 850px;
+    }
+
+    .hero-description {
+      max-width: 480px;
+      margin-top: 35px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,.85);
+    }
+
+    .scroll {
+      margin-top: 45px;
+      font-size: .65rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      opacity: .7;
+    }
+
+    /* ---------- INTRO ---------- */
+
+    .intro {
+      padding: 130px 8vw;
+      background: #f2eee6;
+      color: #171713;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10vw;
+      align-items: center;
+    }
+
+    .intro h2 {
+      font-family: "Bodoni Moda", serif;
+      font-size: clamp(2.8rem, 5vw, 5.5rem);
+      font-weight: 400;
+      line-height: .95;
+    }
+
+    .intro-text {
+      max-width: 500px;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .intro-text p + p {
+      margin-top: 25px;
+    }
+
+    /* ---------- WORK ---------- */
+
+    .work {
+      padding: 120px 6vw;
+      background: #171714;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      font-family: "Bodoni Moda", serif;
+      font-weight: 400;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+    }
+
+    .section-heading span {
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      opacity: .6;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.35fr .8fr;
+      gap: 25px;
+    }
+
+    .gallery-image {
+      min-height: 620px;
+      background:
+        linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=85")
+        center / cover;
+    }
+
+    .gallery-side {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .gallery-small {
+      min-height: 290px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery-small.one {
+      background-image:
+        url("https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1200&q=85");
+    }
+
+    .gallery-small.two {
+      background-image:
+        url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=85");
+    }
+
+    /* ---------- FAITH ---------- */
+
+    .faith {
+      min-height: 75vh;
+      padding: 120px 8vw;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+    }
+
+    .faith-content {
+      max-width: 800px;
+    }
+
+    .faith h2 {
+      font-family: "Bodoni Moda", serif;
+      font-size: clamp(3rem, 6vw, 6.5rem);
+      font-weight: 400;
+      line-height: .95;
+    }
+
+    .faith p {
+      margin-top: 35px;
+      max-width: 600px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      padding: 70px 7vw;
+      background: #11110f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    footer .logo {
+      font-size: 1rem;
+    }
+
+    footer p {
+      font-size: .72rem;
+      opacity: .55;
+      letter-spacing: .08em;
+    }
+
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 800px) {
+
+      .nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content {
+        padding-bottom: 8vh;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.6rem, 16vw, 6rem);
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+        padding: 90px 8vw;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-image {
+        min-height: 500px;
+      }
+
+      .gallery-side {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 250px;
+      }
+
+      .gallery-small {
+        min-height: 250px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+
+    <nav class="nav">
+      <a href="#" class="logo">Shutter & Psalm</a>
+
+      <ul class="nav-links">
+        <li><a href="#photography">Photography</a></li>
+        <li><a href="#art">Digital Art</a></li>
+        <li><a href="#faith">Faith</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <div class="eyebrow">Photography · Art · Faith</div>
+
+      <h1>
+        He made it.<br>
+        I just get<br>
+        to see it.
+      </h1>
+
+      <p class="hero-description">
+        Photography, digital art, and stories created to point back to the Creator.
+      </p>
+
+      <div class="scroll">Scroll to explore ↓</div>
+    </div>
+
+  </section>
+
+
+  <section class="intro">
+
+    <h2>
+      Beauty was<br>
+      never meant<br>
+      to be rushed.
+    </h2>
+
+    <div class="intro-text">
+
+      <p>
+        There is something sacred about stopping long enough to notice.
+        A shaft of light through the trees. A bird that stays just long enough.
+        The tiny details hiding beneath our feet.
+      </p>
+
+      <p>
+        Shutter & Psalm exists to slow down, look closer, and remember
+        the One who made it all.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="work" id="photography">
+
+    <div class="section-heading">
+      <h2>Photography</h2>
+      <span>Creation through my lens</span>
+    </div>
+
+    <div class="gallery">
+
+      <div class="gallery-image"></div>
+
+      <div class="gallery-side">
+        <div class="gallery-small one"></div>
+        <div class="gallery-small two"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="faith" id="faith">
+
+    <div class="faith-content">
+
+      <div class="eyebrow">Faith & Creation</div>
+
+      <h2>
+        The heavens<br>
+        declare His glory.
+      </h2>
+
+      <p>
+        “The heavens declare the glory of God; the skies proclaim the work
+        of his hands.” — Psalm 19:1
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <div class="logo">Shutter & Psalm</div>
+
+    <p>
+      Created to see. Created to tell. Created for His glory.
+    </p>
+
+  </footer>
+
+</body>
+</html>
