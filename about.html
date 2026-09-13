@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet Sue, the digital artist and developing photographer behind Shutter & Psalm, and discover the faith and purpose behind her work.">
+  <title>About Sue | Shutter &amp; Psalm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/shutter-and-psalm-monogram.png">
+  <style>
+    :root{--ink:#2b202a;--deep:#180f18;--rose:#b99a98;--cream:#f3f0e9;--white:#fffdf8;--serif:"Bodoni Moda",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+    *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.7 var(--sans)}img{display:block;max-width:100%}a{color:inherit}.shell{width:min(100% - 3rem,1080px);margin-inline:auto}.eyebrow{margin:0 0 .8rem;font:500 .72rem/1.3 var(--sans);letter-spacing:.2em;text-transform:uppercase}.section-title{margin:0;font:400 clamp(1.8rem,3.5vw,3rem)/1.16 var(--serif);letter-spacing:.06em}.body-copy{font-size:.96rem;line-height:1.8}.body-copy p{margin:0 0 1.15rem}.button-link{display:inline-flex;min-height:44px;padding:.7rem 1.15rem;border:1px solid currentColor;align-items:center;justify-content:center;font-size:.75rem;letter-spacing:.14em;text-decoration:none;text-transform:uppercase;transition:.2s}.button-link:hover,.button-link:focus-visible{background:var(--ink);color:var(--white)}
+
+    .site-header{display:flex;min-height:76px;padding:0 2rem;align-items:center;justify-content:space-between;background:var(--cream);border-bottom:1px solid #2b202a1c}.header-mark{display:block;width:48px;height:56px;background:var(--deep);-webkit-mask:url("assets/shutter-and-psalm-monogram.png") center/contain no-repeat;mask:url("assets/shutter-and-psalm-monogram.png") center/contain no-repeat}.nav-links{display:flex;margin:0;padding:0;align-items:center;gap:clamp(1rem,2.4vw,2rem);list-style:none}.nav-links a{color:var(--deep);font-size:.76rem;font-weight:600;letter-spacing:.14em;text-decoration:none;text-transform:uppercase}.nav-links a:hover,.nav-links a:focus-visible,.nav-links a[aria-current="page"]{text-decoration:underline;text-underline-offset:.35rem}.cart-link{display:grid;width:38px;height:38px;place-items:center}.cart-link svg{width:18px}.menu-button{display:none;border:0;background:transparent;color:var(--deep);cursor:pointer}
+
+    .about-hero{display:grid;min-height:500px;grid-template-columns:1.08fr .92fr;background:var(--ink)}.hero-photo{min-height:500px;background:linear-gradient(90deg,transparent 75%,#2b202a35),url("assets/about.jpg?v=3") center top/cover no-repeat}.hero-copy{display:flex;padding:clamp(3rem,7vw,7rem);flex-direction:column;align-items:flex-start;justify-content:center;color:var(--white)}.hero-copy .eyebrow{color:#fffdf8a8}.hero-copy h1{max-width:520px;margin:0;font:400 clamp(2.35rem,4.7vw,4.6rem)/1.04 var(--serif);letter-spacing:.035em}.hero-copy p{margin:1.2rem 0 0;color:#fffdf8b8;font:400 clamp(1rem,1.5vw,1.15rem)/1.7 var(--sans)}.script-note{margin-top:1.5rem;color:#fffdf8c7;font:400 1.65rem/1.2 "Allura",cursive}
+
+    .identity{padding:5.5rem 0;background:var(--cream)}.identity-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(2.5rem,7vw,7rem);align-items:start}.identity-heading{position:sticky;top:2rem}.identity-heading .section-title{max-width:360px}.identity-copy{max-width:650px}.lead{margin-top:0;font:400 clamp(1.2rem,2vw,1.55rem)/1.55 var(--serif)}.identity-mark{display:block;width:1px;height:58px;margin-top:1.7rem;background:var(--rose)}
+
+    .purpose{display:grid;min-height:470px;grid-template-columns:.92fr 1.08fr;background:var(--rose)}.purpose-image{min-height:470px;background:linear-gradient(90deg,#00000014,transparent 35%),url("assets/scripture-inspired.jpg") center/cover no-repeat}.purpose-copy{display:flex;padding:clamp(3rem,7vw,6rem);flex-direction:column;align-items:flex-start;justify-content:center}.purpose-copy .body-copy{max-width:560px}.verse-ref{margin:0 0 1rem;color:#2b202aa8;font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+
+    .creative{padding:5.5rem 0;background:var(--cream);text-align:center}.creative-intro{max-width:680px;margin:0 auto 2.6rem}.creative-intro p{color:#2b202ab8}.creative-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:left}.creative-card{display:grid;min-height:420px;grid-template-rows:240px 1fr;background:var(--white);border:1px solid #2b202a14}.creative-card img{width:100%;height:240px;object-fit:cover}.creative-card-copy{padding:1.7rem}.creative-card h3{margin:0 0 .7rem;font:400 1.5rem/1.2 var(--serif);letter-spacing:.1em;text-transform:uppercase}.creative-card p{margin:0;color:#2b202ab8;font-size:.9rem;line-height:1.7}
+
+    .prayer{padding:5.5rem 0;background:var(--ink);color:var(--white);text-align:center}.prayer-inner{max-width:790px;margin-inline:auto}.prayer .eyebrow{color:#fffdf899}.prayer p{margin:1.2rem auto;color:#fffdf8bd;font-size:.98rem;line-height:1.85}.prayer-quote{display:block;margin:2rem 0;color:var(--white);font:400 clamp(2rem,5vw,4rem)/1.15 var(--serif);letter-spacing:.035em}.glory{display:block;margin:1.4rem 0 2rem;color:#fffdf8c7;font:400 1.8rem/1.2 "Allura",cursive}.prayer .button-link:hover,.prayer .button-link:focus-visible{background:var(--white);color:var(--ink)}
+
+    .site-footer{background:var(--deep);border-top:1px solid #ffffff14}.footer-inner{display:grid;min-height:74px;width:min(100% - 3rem,1180px);margin-inline:auto;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem}.copyright,.footer-devotion{margin:0;color:#ffffff9e;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}.footer-devotion{justify-self:end}.social-links{display:flex;gap:.8rem}.social-links a{display:grid;width:34px;height:34px;place-items:center;border:1px solid #fffdf86b;border-radius:50%;color:var(--white);text-decoration:none;transition:.2s}.social-links svg{display:block;width:17px;height:17px}.social-links a:hover,.social-links a:focus-visible{background:#fffdf81a;border-color:var(--white);transform:translateY(-2px)}
+
+    @media(max-width:900px){.nav-links{position:absolute;z-index:10;top:68px;right:1.5rem;display:none;width:min(280px,calc(100vw - 3rem));padding:1rem;flex-direction:column;align-items:stretch;gap:0;background:#f3f0e9fa;border:1px solid #2b202a29}.nav-links.open{display:flex}.nav-links a{display:block;padding:.75rem}.menu-button{display:grid;width:42px;height:42px;place-items:center}.cart-item{display:none}.about-hero{grid-template-columns:1fr 1fr}.hero-copy{padding:3rem 2.3rem}.identity-grid{grid-template-columns:1fr;gap:2rem}.identity-heading{position:static}.identity-mark{display:none}.purpose{grid-template-columns:1fr 1fr}.purpose-copy{padding:3rem 2.3rem}}
+    @media(max-width:640px){.shell{width:min(100% - 2rem,1080px)}.site-header{min-height:68px;padding:0 .9rem}.header-mark{width:43px;height:50px}.about-hero{grid-template-columns:1fr}.hero-photo{min-height:340px}.hero-copy{min-height:360px;padding:3rem 1.5rem}.identity,.creative,.prayer{padding:4rem 0}.purpose{grid-template-columns:1fr}.purpose-image{min-height:330px}.purpose-copy{padding:3.4rem 1.5rem}.creative-grid{grid-template-columns:1fr}.creative-card{min-height:0}.footer-inner{grid-template-columns:1fr auto;padding:1.2rem 0}.footer-devotion{display:none}.social-links{justify-self:end}}
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Primary navigation">
+    <a href="index.html" aria-label="Shutter and Psalm home"><span class="header-mark" aria-hidden="true"></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Open navigation menu"><svg viewBox="0 0 24 24" width="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    <ul class="nav-links" id="primary-menu">
+      <li><a href="index.html">Home</a></li><li><a href="index.html#gallery">Gallery</a></li><li><a href="index.html#shop">Shop</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="index.html#journal">Journal</a></li><li><a href="index.html#contact">Contact</a></li>
+      <li class="cart-item"><a class="cart-link" href="index.html#shop" aria-label="View shop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H7M10 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="hero-photo" role="img" aria-label="Silhouette of Sue standing before an ocean sunset"></div>
+      <div class="hero-copy"><p class="eyebrow">About Shutter &amp; Psalm</p><h1>The Heart Behind Shutter &amp; Psalm</h1><p>Daughter of God. Digital artist. Developing photographer.</p><span class="script-note">All glory to Him.</span></div>
+    </section>
+
+    <section class="identity"><div class="shell identity-grid">
+      <div class="identity-heading"><p class="eyebrow">Who I Am</p><h2 class="section-title">Daughter of God,<br>First and Foremost</h2><span class="identity-mark" aria-hidden="true"></span></div>
+      <div class="identity-copy body-copy">
+        <p class="lead">Hi, I’m Sue—the digital artist and developing photographer behind Shutter &amp; Psalm.</p>
+        <p>Before I am an artist, designer, photographer, or business owner, I am a daughter of God. That is the truest and most important thing about me.</p>
+        <p>My identity is not found in what I create, what I accomplish, or how my work is received. It is rooted in Christ—in His love, His grace, and the new life He has given me.</p>
+        <p>Shutter &amp; Psalm flows from that identity. This work does not define me; it is one way I can serve the One who does. Everything I create begins with Him, belongs to Him, and is offered back to Him for His glory.</p>
+      </div>
+    </div></section>
+
+    <section class="purpose">
+      <div class="purpose-image" role="img" aria-label="Placeholder image of Scripture-inspired artwork displayed in a home"></div>
+      <div class="purpose-copy"><p class="eyebrow">Creativity With a Greater Purpose</p><p class="verse-ref">1 Peter 4:10–11 &nbsp;·&nbsp; Matthew 28:19</p><div class="body-copy">
+        <p>First Peter 4:10–11 reminds us that we have each been given gifts and are called to use them in service to others and for the glory of God. For me, that calling takes shape through creativity.</p>
+        <p>Shutter &amp; Psalm was born from a desire to use my creative gifts to share the Gospel and the love, truth, and grace of Jesus Christ. Inspired by Christ’s call in Matthew 28:19 to go and make disciples, I want the things I create to do more than simply make a space beautiful. I want them to carry a message that matters.</p>
+      </div></div>
+    </section>
+
+    <section class="creative"><div class="shell">
+      <div class="creative-intro"><p class="eyebrow">What I Create</p><h2 class="section-title">Art. Design. Faith.</h2><p>Two creative paths, united by one purpose: to point hearts back to their Creator.</p></div>
+      <div class="creative-grid">
+        <article class="creative-card"><img src="assets/seasonal-designs.jpg" alt="Placeholder example of a seasonal Scripture-inspired design"><div class="creative-card-copy"><h3>Digital Art</h3><p>Scripture-inspired digital art is at the heart of what I create today. Through thoughtful design, meaningful words, and visual storytelling, I create pieces intended to bring God’s truth into homes and everyday spaces.</p></div></article>
+        <article class="creative-card"><img src="assets/photography-coming-soon.jpg" alt="Placeholder sunset photograph"><div class="creative-card-copy"><h3>Photography</h3><p>Photography is also becoming part of that story. As I continue developing behind the camera, I hope to capture glimpses of the beauty God has placed throughout His creation—and point that beauty back to its Creator.</p></div></article>
+      </div>
+    </div></section>
+
+    <section class="prayer"><div class="shell prayer-inner">
+      <p class="eyebrow">My Prayer for This Work</p><h2 class="section-title">A Message That Meets You in Every Season</h2>
+      <p>My hope is that people encounter Christ through this work in every season of life—in moments of joy and celebration, as well as sorrow and pain.</p>
+      <p>I pray that each piece offers encouragement, helps someone recognize His grace and love, and inspires a deeper relationship with Him. If something I create reminds even one person that God is near, encourages them to open His Word, or helps lead their heart toward Christ, then it has fulfilled its purpose.</p>
+      <span class="prayer-quote">Help make Heaven crowded.</span>
+      <p>Ultimately, I want to use what God has given me to share His truth and reflect His beauty.</p>
+      <span class="glory">All glory to Him.</span>
+      <a class="button-link" href="index.html#shop">Explore the Collection</a>
+    </div></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><p class="copyright">© <span id="year"></span> Shutter &amp; Psalm</p><div class="social-links" aria-label="Social media links"><a href="https://www.instagram.com/shutterandpsalm/" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/profile.php?id=61583411422359" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Facebook" title="Facebook"><svg viewBox="0 0 320 512" aria-hidden="true"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a></div><p class="footer-devotion">To Him be all the glory.</p></div></footer>
+
+  <script>
+    const menuButton=document.querySelector('.menu-button'),menu=document.querySelector('.nav-links');menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));document.querySelector('#year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
