@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Shutter & Psalm Journal—stories of faith, creativity, and finding beauty in God’s creation.">
+  <title>Journal | Shutter &amp; Psalm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/shutter-and-psalm-monogram.png">
+  <style>
+    :root{--ink:#2b202a;--deep:#180f18;--plum:#5b354a;--rose:#b99a98;--sage:#879077;--cream:#f3f0e9;--white:#fffdf8;--serif:"Libre Baskerville",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+    *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 var(--sans)}img{display:block;max-width:100%}a{color:inherit}.shell{width:min(100% - 3rem,1120px);margin-inline:auto}.eyebrow{margin:0;color:#785165;font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase}.story-link{display:inline-flex;gap:.55rem;align-items:center;color:var(--deep);font-size:.7rem;font-weight:600;letter-spacing:.16em;text-decoration:none;text-transform:uppercase}.story-link::after{content:"→";font-size:.95rem;transition:transform .2s}.story-link:hover::after,.story-link:focus-visible::after{transform:translateX(.25rem)}
+
+    .site-header{display:flex;min-height:76px;padding:0 2rem;align-items:center;justify-content:space-between;background:var(--cream);border-bottom:1px solid #2b202a1c}.header-mark{display:block;width:48px;height:56px;background:var(--deep);-webkit-mask:url("assets/shutter-and-psalm-monogram.png") center/contain no-repeat;mask:url("assets/shutter-and-psalm-monogram.png") center/contain no-repeat}.nav-links{display:flex;margin:0;padding:0;align-items:center;gap:clamp(1rem,2.4vw,2rem);list-style:none}.nav-links a{color:var(--deep);font-size:.76rem;font-weight:600;letter-spacing:.14em;text-decoration:none;text-transform:uppercase}.nav-links a:hover,.nav-links a:focus-visible,.nav-links a[aria-current="page"]{text-decoration:underline;text-underline-offset:.35rem}.cart-link{display:grid;width:38px;height:38px;place-items:center}.cart-link svg{width:18px}.menu-button{display:none;border:0;background:transparent;color:var(--deep);cursor:pointer}
+
+    .journal-hero{position:relative;display:grid;min-height:390px;overflow:hidden;align-items:center;background:linear-gradient(90deg,#f3f0e9f2 0%,#f3f0e9cf 48%,#f3f0e92c 76%),url("assets/Hero.jpg?v=clean-1") center 58%/cover no-repeat}.journal-hero::after{position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,#180f1817);content:""}.hero-copy{position:relative;z-index:1;width:min(100% - 3rem,1120px);margin-inline:auto;padding:4.5rem 0}.hero-copy h1{max-width:710px;margin:.85rem 0 1.1rem;color:var(--deep);font:400 clamp(2.35rem,5vw,4.4rem)/1.12 var(--serif);letter-spacing:-.025em}.hero-copy>p:last-child{max-width:570px;margin:0;color:#2b202ac9;font:400 clamp(.94rem,1.5vw,1.08rem)/1.8 var(--serif)}
+
+    .featured{padding:4.5rem 0 3.75rem;background:var(--white)}.featured-grid{display:grid;grid-template-columns:1.35fr .8fr;gap:clamp(2.5rem,6vw,5.5rem);align-items:center}.featured-image{width:100%;height:430px;object-fit:cover}.featured-copy h2{margin:.75rem 0 1rem;color:var(--deep);font:400 clamp(2rem,4vw,3.5rem)/1.17 var(--serif)}.featured-copy>p:not(.eyebrow):not(.story-date){margin:0 0 1rem;color:#2b202ab8;font:400 .95rem/1.8 var(--serif)}.story-date{margin:1.2rem 0;color:#2b202a8f;font-size:.64rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase}.featured-copy .story-link{min-height:46px;padding:.7rem 1.15rem;background:var(--plum);color:var(--white)}
+
+    .latest{padding:3rem 0 4.5rem;background:var(--white);border-top:1px solid #2b202a19}.latest-heading{text-align:center}.latest-heading::before{display:block;width:34px;height:1px;margin:0 auto 1.1rem;background:var(--sage);content:""}.latest h2{margin:0;color:var(--deep);font:400 clamp(2rem,4vw,3.25rem)/1.2 var(--serif)}.latest-note{margin:.7rem 0 0;color:#2b202a8f;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase}.post-grid{display:grid;margin-top:2.2rem;grid-template-columns:repeat(3,1fr);gap:1.6rem}.post-image{width:100%;aspect-ratio:1.35/1;object-fit:cover}.post-card .eyebrow{margin-top:1rem}.post-card h3{margin:.55rem 0 .55rem;color:var(--deep);font:400 clamp(1.25rem,2vw,1.55rem)/1.35 var(--serif)}.post-card>p:not(.eyebrow):not(.story-date){margin:0;color:#2b202aa8;font:400 .88rem/1.7 var(--serif)}.post-card .story-date{margin:.8rem 0}.post-card .story-link{border-bottom:1px solid #b99a9870;padding-bottom:.15rem}
+
+    .scripture-band{position:relative;display:grid;min-height:220px;place-items:center;overflow:hidden;background:linear-gradient(135deg,#6b4257,#3e2635);color:var(--white);text-align:center}.scripture-band::before,.scripture-band::after{position:absolute;right:-6%;bottom:-75px;left:-6%;height:160px;background:#180f181f;clip-path:polygon(0 68%,10% 45%,18% 62%,28% 28%,39% 60%,48% 40%,58% 67%,70% 32%,81% 57%,91% 38%,100% 61%,100% 100%,0 100%);content:""}.scripture-band::after{bottom:-104px;background:#180f1829;transform:scaleX(-1)}.scripture-inner{position:relative;z-index:1;padding:3rem 1.5rem}.scripture-band blockquote{margin:0;font:400 clamp(1.35rem,3vw,2.25rem)/1.45 var(--serif)}.scripture-band cite{display:block;margin-top:1rem;color:#fffdf8c4;font-size:.65rem;font-style:normal;font-weight:500;letter-spacing:.28em;text-transform:uppercase}
+
+    .site-footer{background:var(--cream);border-top:1px solid #2b202a1c}.footer-inner{display:grid;min-height:84px;width:min(100% - 3rem,1180px);margin-inline:auto;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem}.copyright,.footer-devotion{margin:0;color:#2b202a8f;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}.footer-devotion{justify-self:end}.social-links{display:flex;gap:.8rem}.social-links a{display:grid;width:34px;height:34px;place-items:center;border:1px solid #2b202a52;border-radius:50%;color:var(--deep);text-decoration:none;transition:.2s}.social-links svg{display:block;width:17px;height:17px}.social-links a:hover,.social-links a:focus-visible{background:#2b202a0c;border-color:var(--deep);transform:translateY(-2px)}
+
+    @media(max-width:900px){.nav-links{position:absolute;z-index:10;top:68px;right:1.5rem;display:none;width:min(280px,calc(100vw - 3rem));padding:1rem;flex-direction:column;align-items:stretch;gap:0;background:#f3f0e9fa;border:1px solid #2b202a29}.nav-links.open{display:flex}.nav-links a{display:block;padding:.75rem}.menu-button{display:grid;width:42px;height:42px;place-items:center}.cart-item{display:none}.journal-hero{min-height:360px;background:linear-gradient(90deg,#f3f0e9f5,#f3f0e9b8 76%,#f3f0e961),url("assets/Hero.jpg?v=clean-1") center 58%/cover no-repeat}.featured-grid{grid-template-columns:1.15fr .85fr;gap:2rem}.featured-image{height:360px}.post-grid{gap:1rem}}
+    @media(max-width:640px){.shell{width:min(100% - 2rem,1120px)}.site-header{min-height:68px;padding:0 .9rem}.header-mark{width:43px;height:50px}.journal-hero{min-height:430px;background:linear-gradient(180deg,#f3f0e9eb 0%,#f3f0e9c2 72%,#f3f0e99c),url("assets/Hero.jpg?v=clean-1") center/cover no-repeat}.hero-copy{width:min(100% - 2rem,1120px);padding:4rem 0}.featured{padding:3.25rem 0}.featured-grid{grid-template-columns:1fr;gap:1.8rem}.featured-image{height:300px}.featured-copy h2{font-size:2rem}.latest{padding:2.7rem 0 3.5rem}.post-grid{grid-template-columns:1fr;gap:2.5rem}.post-image{aspect-ratio:1.5/1}.scripture-band{min-height:210px}.footer-inner{grid-template-columns:1fr auto;padding:1.2rem 0}.footer-devotion{display:none}.social-links{justify-self:end}}
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Primary navigation">
+    <a href="index.html" aria-label="Shutter and Psalm home"><span class="header-mark" aria-hidden="true"></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Open navigation menu"><svg viewBox="0 0 24 24" width="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    <ul class="nav-links" id="primary-menu">
+      <li><a href="index.html">Home</a></li><li><a href="index.html#gallery">Gallery</a></li><li><a href="index.html#shop">Shop</a></li><li><a href="about.html">About</a></li><li><a href="journal.html" aria-current="page">Journal</a></li><li><a href="contact.html">Contact</a></li>
+      <li class="cart-item"><a class="cart-link" href="index.html#shop" aria-label="View shop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H7M10 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="journal-hero">
+      <div class="hero-copy"><p class="eyebrow">The Journal</p><h1>Stories of faith, creativity &amp; finding beauty in His creation</h1><p>A space for honest reflection, creative inspiration, and encouragement—because every moment, every story, and every beauty we capture can point back to Him.</p></div>
+    </section>
+
+    <section class="featured" id="featured"><div class="shell featured-grid">
+      <img class="featured-image" src="assets/photography-coming-soon.jpg" alt="A peaceful landscape reflecting the beauty of God’s creation">
+      <article class="featured-copy"><p class="eyebrow">Faith &amp; Reflection</p><h2>When God Meets Us in the Quiet</h2><p>In the stillness, away from the noise and the hurry, we often find that God is already there—gently reminding us of His presence, His peace, and His purpose.</p><p class="story-date">Coming soon</p><a class="story-link" href="#latest">Read the story</a></article>
+    </div></section>
+
+    <section class="latest" id="latest"><div class="shell">
+      <div class="latest-heading"><h2>Latest from the Journal</h2><p class="latest-note">Thoughts · Images · Encouragement · All for His glory</p></div>
+      <div class="post-grid">
+        <article class="post-card"><img class="post-image" src="assets/Hero.jpg?v=clean-1" alt="A glowing sunset over the ocean"><p class="eyebrow">Creative Process</p><h3>Chasing Light, Finding Grace</h3><p>How the light changes what we see—and reminds us to notice the beauty God has placed before us.</p><p class="story-date">Coming soon</p><a class="story-link" href="#featured">Read the story</a></article>
+        <article class="post-card"><img class="post-image" src="assets/scripture-inspired.jpg" alt="Scripture-inspired digital artwork"><p class="eyebrow">Faith</p><h3>Sitting Still with Scripture</h3><p>Slowing down with God’s Word and allowing His truth to shape what we create and how we live.</p><p class="story-date">Coming soon</p><a class="story-link" href="#featured">Read the story</a></article>
+        <article class="post-card"><img class="post-image" src="assets/about.jpg?v=2" alt="The artist standing before the beauty of creation"><p class="eyebrow">Behind the Lens</p><h3>The Sacred in the Ordinary</h3><p>A closer look at the everyday details that remind us God’s glory is present all around us.</p><p class="story-date">Coming soon</p><a class="story-link" href="#featured">Read the story</a></article>
+      </div>
+    </div></section>
+
+    <section class="scripture-band" aria-label="Scripture"><div class="scripture-inner"><blockquote>“He has made everything beautiful in its time.”</blockquote><cite>Ecclesiastes 3:11</cite></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><p class="copyright">© <span id="year"></span> Shutter &amp; Psalm</p><div class="social-links" aria-label="Social media links"><a href="https://www.instagram.com/shutterandpsalm/" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/profile.php?id=61583411422359" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Facebook" title="Facebook"><svg viewBox="0 0 320 512" aria-hidden="true"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a></div><p class="footer-devotion">To Him be all the glory.</p></div></footer>
+
+  <script>
+    const menuButton=document.querySelector('.menu-button'),menu=document.querySelector('.nav-links');menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));document.querySelector('#year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
