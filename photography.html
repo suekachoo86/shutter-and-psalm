@@ -31,12 +31,19 @@
     .eyebrow{margin:0 0 1rem;color:#e3c9c3;font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase}
     .hero-copy h1{max-width:790px;margin:0;font:400 clamp(2.8rem,6vw,5.4rem)/1.08 var(--serif);letter-spacing:-.035em}
     .hero-copy>p:not(.eyebrow){max-width:535px;margin:1.55rem 0 0;color:#fffdf8d4;font-size:clamp(.98rem,1.5vw,1.12rem);line-height:1.75}.scripture-verse{font-family:var(--serif);font-style:italic}.scripture-reference{display:block;margin-top:.35rem;font:400 .72rem/1.5 var(--sans);font-style:normal;letter-spacing:.14em;text-transform:uppercase}
-    .gallery{padding:5.5rem 0 6rem;background:var(--deep)}
-    .gallery-heading{width:min(100% - 3rem,1180px);margin:0 auto 2.4rem;text-align:center}
-    .gallery-heading .eyebrow{margin-bottom:.65rem}
+    .gallery{background:var(--cream);color:var(--ink)}
+    .gallery-heading{width:min(100% - 3rem,1180px);margin:0 auto;padding:5rem 0 1.5rem;text-align:center}
+    .gallery-heading .eyebrow,.collection-heading .eyebrow{margin-bottom:.65rem;color:#76546a}
     .gallery-heading h2{margin:0;font:400 clamp(2.15rem,4vw,3.4rem)/1.15 var(--serif)}
+    .collection{padding:1.5rem 0 5.5rem}
+    .collection-highlands{background:var(--cream)}
+    .collection-coast{padding-top:4.5rem;background:#d9c5c1}
+    .collection-inner{width:min(100% - 3rem,1180px);margin-inline:auto}
+    .collection-heading{margin-bottom:2rem;text-align:center}
+    .collection-heading h3{margin:0;color:var(--deep);font:400 clamp(1.7rem,3vw,2.5rem)/1.2 var(--serif)}
     .gallery-grid{width:min(100% - 3rem,1180px);margin-inline:auto;columns:3 300px;column-gap:1rem}
-    .gallery-item{display:block;width:100%;margin:0 0 1rem;padding:0;overflow:hidden;border:1px solid #fffdf824;background:transparent;break-inside:avoid;cursor:zoom-in}
+    .collection-inner .gallery-grid{width:100%}
+    .gallery-item{display:block;width:100%;margin:0 0 1rem;padding:0;overflow:hidden;border:1px solid #2b202a26;background:var(--white);box-shadow:0 12px 28px #2b202a18;break-inside:avoid;cursor:zoom-in}
     .gallery-item img{display:block;width:100%;height:auto;transition:transform .45s ease,filter .45s ease}
     .gallery-item:hover img,.gallery-item:focus-visible img{filter:brightness(1.07);transform:scale(1.025)}
     .gallery-item:focus-visible{outline:2px solid var(--rose);outline-offset:4px}
@@ -79,9 +86,12 @@
       .hero-copy{width:min(100% - 2rem,1180px);padding:4.6rem 0 2.5rem}
       .hero-copy h1{font-size:clamp(2.55rem,12vw,3.7rem);line-height:1.1}
       .hero-copy>p:not(.eyebrow){max-width:390px;font-size:1rem}
-      .gallery{padding:4rem 0}
+      .gallery-heading{padding:4rem 0 1.25rem}
+      .collection{padding:1rem 0 4rem}
+      .collection-coast{padding-top:3.5rem}
       .gallery-heading,.gallery-grid{width:min(100% - 2rem,1180px)}
       .gallery-heading{margin-bottom:1.75rem}
+      .collection-inner{width:min(100% - 2rem,1180px)}
       .gallery-grid{columns:1}
       .lightbox-layout{min-height:0;grid-template-columns:1fr}
       .lightbox-visual{min-height:0;padding:.75rem}
@@ -117,13 +127,25 @@
         <p class="eyebrow">Shutter &amp; Psalm Photography</p>
         <h2 id="gallery-title">The Gallery</h2>
       </div>
-      <div class="gallery-grid">
-        <button class="gallery-item" type="button" data-full="assets/waterfall1.jpg" data-title="Where the Deep Calls" data-location="Dry Falls · Highlands, North Carolina" data-scripture="Deep calls to deep in the roar of your waterfalls." data-reference="Psalm 42:7" aria-label="View Where the Deep Calls photograph and details"><img src="assets/waterfall1.jpg" alt="Water cascading over Dry Falls in a green forest" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-full="assets/macro_flower1.jpg" data-title="Delicate by Design" data-location="Highlands, North Carolina" data-scripture="Consider the lilies of the field, how they grow." data-reference="Matthew 6:28" aria-label="View Delicate by Design photograph and details"><img src="assets/macro_flower1.jpg" alt="Close-up of a pale pink mountain laurel blossom resting on stone" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-full="assets/waterfall2.jpg" data-title="Beneath the Roar" data-location="Dry Falls · Highlands, North Carolina" data-scripture="Deep calls to deep in the roar of your waterfalls." data-reference="Psalm 42:7" aria-label="View Beneath the Roar photograph and details"><img src="assets/waterfall2.jpg" alt="Vertical view from behind Dry Falls surrounded by greenery" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-full="assets/sunset1.jpg" data-title="Heaven Meets the Sea" data-location="Holmes Beach · Anna Maria Island, Florida" data-scripture="The heavens declare the glory of God." data-reference="Psalm 19:1" aria-label="View Heaven Meets the Sea photograph and details"><img src="assets/sunset1.jpg" alt="Golden sunset light over the Gulf of Mexico" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-full="assets/sunset2.jpg" data-title="Fire on the Water" data-location="Holmes Beach · Anna Maria Island, Florida" data-scripture="From the rising of the sun unto the going down of the same the Lord’s name is to be praised." data-reference="Psalm 113:3" aria-label="View Fire on the Water photograph and details"><img src="assets/sunset2.jpg" alt="Colorful evening sky above the Gulf shoreline" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-full="assets/sunset3.jpg" data-title="The Day’s Amen" data-location="Holmes Beach · Anna Maria Island, Florida" data-scripture="You make the dawn and the sunset shout for joy." data-reference="Psalm 65:8" aria-label="View The Day’s Amen photograph and details"><img src="assets/sunset3.jpg" alt="Warm sunset over calm Gulf waves" loading="lazy"></button>
+      <div class="collection collection-highlands">
+        <div class="collection-inner">
+          <div class="collection-heading"><p class="eyebrow">Dry Falls</p><h3>Highlands, North Carolina</h3></div>
+          <div class="gallery-grid">
+            <button class="gallery-item" type="button" data-full="assets/waterfall1.jpg" data-title="Where the Deep Calls" data-location="Dry Falls · Highlands, North Carolina" data-scripture="Deep calls to deep in the roar of your waterfalls." data-reference="Psalm 42:7" aria-label="View Where the Deep Calls photograph and details"><img src="assets/waterfall1.jpg" alt="Water cascading over Dry Falls in a green forest" loading="lazy"></button>
+            <button class="gallery-item" type="button" data-full="assets/macro_flower1.jpg" data-title="Delicate by Design" data-location="Highlands, North Carolina" data-scripture="Consider the lilies of the field, how they grow." data-reference="Matthew 6:28" aria-label="View Delicate by Design photograph and details"><img src="assets/macro_flower1.jpg" alt="Close-up of a pale pink mountain laurel blossom resting on stone" loading="lazy"></button>
+            <button class="gallery-item" type="button" data-full="assets/waterfall2.jpg" data-title="Beneath the Roar" data-location="Dry Falls · Highlands, North Carolina" data-scripture="Deep calls to deep in the roar of your waterfalls." data-reference="Psalm 42:7" aria-label="View Beneath the Roar photograph and details"><img src="assets/waterfall2.jpg" alt="Vertical view from behind Dry Falls surrounded by greenery" loading="lazy"></button>
+          </div>
+        </div>
+      </div>
+      <div class="collection collection-coast">
+        <div class="collection-inner">
+          <div class="collection-heading"><p class="eyebrow">Holmes Beach</p><h3>Anna Maria Island, Florida</h3></div>
+          <div class="gallery-grid">
+            <button class="gallery-item" type="button" data-full="assets/sunset1.jpg" data-title="Heaven Meets the Sea" data-location="Holmes Beach · Anna Maria Island, Florida" data-scripture="The heavens declare the glory of God." data-reference="Psalm 19:1" aria-label="View Heaven Meets the Sea photograph and details"><img src="assets/sunset1.jpg" alt="Golden sunset light over the Gulf of Mexico" loading="lazy"></button>
+            <button class="gallery-item" type="button" data-full="assets/sunset2.jpg" data-title="Fire on the Water" data-location="Holmes Beach · Anna Maria Island, Florida" data-scripture="From the rising of the sun unto the going down of the same the Lord’s name is to be praised." data-reference="Psalm 113:3" aria-label="View Fire on the Water photograph and details"><img src="assets/sunset2.jpg" alt="Colorful evening sky above the Gulf shoreline" loading="lazy"></button>
+            <button class="gallery-item" type="button" data-full="assets/sunset3.jpg" data-title="The Day’s Amen" data-location="Holmes Beach · Anna Maria Island, Florida" data-scripture="You make the dawn and the sunset shout for joy." data-reference="Psalm 65:8" aria-label="View The Day’s Amen photograph and details"><img src="assets/sunset3.jpg" alt="Warm sunset over calm Gulf waves" loading="lazy"></button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
