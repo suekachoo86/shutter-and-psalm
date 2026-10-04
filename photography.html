@@ -40,10 +40,19 @@
     .gallery-item img{display:block;width:100%;height:auto;transition:transform .45s ease,filter .45s ease}
     .gallery-item:hover img,.gallery-item:focus-visible img{filter:brightness(1.07);transform:scale(1.025)}
     .gallery-item:focus-visible{outline:2px solid var(--rose);outline-offset:4px}
-    .lightbox{width:min(94vw,1200px);max-height:92vh;padding:0;border:0;background:transparent;color:var(--white)}
+    .lightbox{width:min(94vw,1180px);max-height:92vh;padding:0;border:0;background:var(--cream);color:var(--ink);overflow:auto}
     .lightbox::backdrop{background:#100910ed;backdrop-filter:blur(5px)}
-    .lightbox img{display:block;max-width:100%;max-height:88vh;margin:auto;object-fit:contain;box-shadow:0 18px 60px #0009}
-    .lightbox-close{position:fixed;top:1rem;right:1rem;display:grid;width:46px;height:46px;padding:0;place-items:center;border:1px solid #fffdf88f;border-radius:50%;background:#180f18d9;color:var(--white);font-size:1.65rem;line-height:1;cursor:pointer}
+    .lightbox-layout{display:grid;min-height:600px;grid-template-columns:minmax(0,1.65fr) minmax(310px,.75fr)}
+    .lightbox-visual{display:flex;min-height:600px;padding:1.25rem;align-items:center;justify-content:center;background:var(--deep)}
+    .lightbox img{display:block;max-width:100%;max-height:82vh;object-fit:contain;box-shadow:0 18px 55px #0008}
+    .lightbox-details{display:flex;padding:clamp(2.25rem,4vw,4rem);flex-direction:column;justify-content:center}
+    .lightbox-kicker{margin:0 0 .8rem;color:#76546a;font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+    .lightbox-details h3{margin:0;font:400 clamp(2rem,3vw,3rem)/1.12 var(--serif)}
+    .lightbox-location{margin:.85rem 0 0;color:#6b6067;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+    .lightbox-rule{width:56px;margin:2rem 0;border:0;border-top:1px solid #76546a80}
+    .lightbox-scripture{margin:0;color:#493d45;font:italic 1.05rem/1.75 var(--serif)}
+    .lightbox-reference{display:block;margin-top:.8rem;color:#76546a;font:500 .7rem/1.4 var(--sans);font-style:normal;letter-spacing:.14em;text-transform:uppercase}
+    .lightbox-close{position:fixed;z-index:2;top:1rem;right:1rem;display:grid;width:46px;height:46px;padding:0;place-items:center;border:1px solid #fffdf88f;border-radius:50%;background:#180f18e8;color:var(--white);font-size:1.65rem;line-height:1;cursor:pointer}
 
     .site-footer{background:var(--deep);border-top:1px solid #ffffff17}
     .footer-inner{display:grid;min-height:76px;width:min(100% - 3rem,1180px);margin-inline:auto;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem}
@@ -74,6 +83,11 @@
       .gallery-heading,.gallery-grid{width:min(100% - 2rem,1180px)}
       .gallery-heading{margin-bottom:1.75rem}
       .gallery-grid{columns:1}
+      .lightbox-layout{min-height:0;grid-template-columns:1fr}
+      .lightbox-visual{min-height:0;padding:.75rem}
+      .lightbox img{max-height:56vh}
+      .lightbox-details{padding:2rem 1.5rem 2.5rem}
+      .lightbox-rule{margin:1.5rem 0}
       .footer-inner{grid-template-columns:1fr auto;padding:1.2rem 0}
       .footer-devotion{display:none}
       .social-links{justify-self:end}
@@ -104,19 +118,28 @@
         <h2 id="gallery-title">The Gallery</h2>
       </div>
       <div class="gallery-grid">
-        <button class="gallery-item" type="button" data-full="assets/waterfall1.jpg" aria-label="View waterfall photograph larger"><img src="assets/waterfall1.jpg" alt="Water cascading over a forest waterfall" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-full="assets/macro_flower1.jpg" aria-label="View flower photograph larger"><img src="assets/macro_flower1.jpg" alt="Close-up detail of a flower" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-full="assets/waterfall2.jpg" aria-label="View vertical waterfall photograph larger"><img src="assets/waterfall2.jpg" alt="Vertical view of a waterfall surrounded by greenery" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-full="assets/sunset1.jpg" aria-label="View sunset photograph larger"><img src="assets/sunset1.jpg" alt="Golden sunset light over the ocean" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-full="assets/sunset2.jpg" aria-label="View second sunset photograph larger"><img src="assets/sunset2.jpg" alt="Colorful evening sky above the shoreline" loading="lazy"></button>
-        <button class="gallery-item" type="button" data-full="assets/sunset3.jpg" aria-label="View third sunset photograph larger"><img src="assets/sunset3.jpg" alt="Warm sunset over calm ocean waves" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-full="assets/waterfall1.jpg" data-title="Dry Falls" data-location="Highlands, North Carolina" data-scripture="Deep calls to deep in the roar of your waterfalls." data-reference="Psalm 42:7" aria-label="View Dry Falls photograph and details"><img src="assets/waterfall1.jpg" alt="Water cascading over Dry Falls in a green forest" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-full="assets/macro_flower1.jpg" data-title="Mountain Laurel" data-location="Highlands, North Carolina" data-scripture="Consider the lilies of the field, how they grow." data-reference="Matthew 6:28" aria-label="View Mountain Laurel photograph and details"><img src="assets/macro_flower1.jpg" alt="Close-up of a pale pink mountain laurel blossom resting on stone" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-full="assets/waterfall2.jpg" data-title="Behind the Falls" data-location="Dry Falls · Highlands, North Carolina" data-scripture="Deep calls to deep in the roar of your waterfalls." data-reference="Psalm 42:7" aria-label="View Behind the Falls photograph and details"><img src="assets/waterfall2.jpg" alt="Vertical view from behind Dry Falls surrounded by greenery" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-full="assets/sunset1.jpg" data-title="Gulf Sunset I" data-location="Panama City Beach, Florida" data-scripture="The heavens declare the glory of God." data-reference="Psalm 19:1" aria-label="View Gulf Sunset I photograph and details"><img src="assets/sunset1.jpg" alt="Golden sunset light over the Gulf of Mexico" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-full="assets/sunset2.jpg" data-title="Gulf Sunset II" data-location="Panama City Beach, Florida" data-scripture="From the rising of the sun unto the going down of the same the Lord’s name is to be praised." data-reference="Psalm 113:3" aria-label="View Gulf Sunset II photograph and details"><img src="assets/sunset2.jpg" alt="Colorful evening sky above the Gulf shoreline" loading="lazy"></button>
+        <button class="gallery-item" type="button" data-full="assets/sunset3.jpg" data-title="Gulf Sunset III" data-location="Panama City Beach, Florida" data-scripture="You make the dawn and the sunset shout for joy." data-reference="Psalm 65:8" aria-label="View Gulf Sunset III photograph and details"><img src="assets/sunset3.jpg" alt="Warm sunset over calm Gulf waves" loading="lazy"></button>
       </div>
     </section>
   </main>
 
   <dialog class="lightbox" aria-label="Expanded photograph">
     <button class="lightbox-close" type="button" aria-label="Close enlarged photograph">&times;</button>
-    <img src="" alt="">
+    <div class="lightbox-layout">
+      <div class="lightbox-visual"><img src="" alt=""></div>
+      <div class="lightbox-details">
+        <p class="lightbox-kicker">Shutter &amp; Psalm Photography</p>
+        <h3></h3>
+        <p class="lightbox-location"></p>
+        <hr class="lightbox-rule">
+        <blockquote class="lightbox-scripture"><span></span><cite class="lightbox-reference"></cite></blockquote>
+      </div>
+    </div>
   </dialog>
 
   <footer class="site-footer"><div class="footer-inner"><p class="copyright">© <span id="year"></span> Shutter &amp; Psalm</p><div class="social-links" aria-label="Social media links"><a href="https://www.instagram.com/shutterandpsalm/" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/profile.php?id=61583411422359" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Facebook" title="Facebook"><svg viewBox="0 0 320 512" aria-hidden="true"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a></div><p class="footer-devotion">To Him be all the glory.</p></div></footer>
@@ -126,8 +149,8 @@
     menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});
     menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));
     document.querySelector('#year').textContent=new Date().getFullYear();
-    const lightbox=document.querySelector('.lightbox'),lightboxImage=lightbox.querySelector('img');
-    document.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>{const image=item.querySelector('img');lightboxImage.src=item.dataset.full;lightboxImage.alt=image.alt;lightbox.showModal()}));
+    const lightbox=document.querySelector('.lightbox'),lightboxImage=lightbox.querySelector('img'),lightboxTitle=lightbox.querySelector('h3'),lightboxLocation=lightbox.querySelector('.lightbox-location'),lightboxVerse=lightbox.querySelector('.lightbox-scripture span'),lightboxReference=lightbox.querySelector('.lightbox-reference');
+    document.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>{const image=item.querySelector('img');lightboxImage.src=item.dataset.full;lightboxImage.alt=image.alt;lightboxTitle.textContent=item.dataset.title;lightboxLocation.textContent=item.dataset.location;lightboxVerse.textContent=`“${item.dataset.scripture}”`;lightboxReference.textContent=`— ${item.dataset.reference}`;lightbox.showModal()}));
     lightbox.querySelector('.lightbox-close').addEventListener('click',()=>lightbox.close());
     lightbox.addEventListener('click',event=>{if(event.target===lightbox)lightbox.close()});
   </script>
