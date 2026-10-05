@@ -44,7 +44,7 @@
     .gallery-item img{display:block;width:100%;height:auto;transition:transform .45s ease,filter .45s ease}
     .gallery-item:hover img,.gallery-item:focus-visible img{filter:brightness(1.07);transform:scale(1.025)}
     .gallery-item:focus-visible{outline:2px solid var(--rose);outline-offset:4px}
-    .lightbox{width:min(94vw,1180px);max-height:92vh;padding:0;border:0;background:var(--cream);color:var(--ink);overflow:auto}
+    .lightbox{position:relative;width:min(94vw,1180px);max-height:92vh;padding:0;border:0;background:var(--cream);color:var(--ink);overflow:auto}
     .lightbox::backdrop{background:#100910ed;backdrop-filter:blur(5px)}
     .lightbox-layout{display:grid;min-height:600px;grid-template-columns:minmax(0,1.65fr) minmax(310px,.75fr)}
     .lightbox-visual{display:flex;min-height:600px;padding:1.25rem;align-items:center;justify-content:center;background:var(--cream)}
@@ -55,7 +55,7 @@
     .lightbox-rule{width:56px;margin:2rem 0;border:0;border-top:1px solid #76546a80}
     .lightbox-scripture{margin:0;color:#493d45;font:italic 1.05rem/1.75 var(--serif)}
     .lightbox-reference{display:block;margin-top:.8rem;color:#76546a;font:500 .7rem/1.4 var(--sans);font-style:normal;letter-spacing:.14em;text-transform:uppercase}
-    .lightbox-close{position:fixed;z-index:2;top:1rem;right:1rem;display:grid;width:46px;height:46px;padding:0;place-items:center;border:1px solid #fffdf88f;border-radius:50%;background:#180f18e8;color:var(--white);font-size:1.65rem;line-height:1;cursor:pointer}
+    .lightbox-close{position:absolute;z-index:2;top:.8rem;right:.8rem;display:grid;width:46px;height:46px;padding:0;place-items:center;border:1px solid var(--deep);border-radius:50%;background:var(--deep);box-shadow:0 6px 18px #180f1838;color:var(--white);font-size:1.65rem;line-height:1;cursor:pointer}
 
     .site-footer{background:var(--deep);border-top:1px solid #ffffff17}
     .footer-inner{display:grid;min-height:76px;width:min(100% - 3rem,1180px);margin-inline:auto;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem}
