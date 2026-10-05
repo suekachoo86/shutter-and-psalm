@@ -44,18 +44,18 @@
     .gallery-item img{display:block;width:100%;height:auto;transition:transform .45s ease,filter .45s ease}
     .gallery-item:hover img,.gallery-item:focus-visible img{filter:brightness(1.07);transform:scale(1.025)}
     .gallery-item:focus-visible{outline:2px solid var(--rose);outline-offset:4px}
-    .lightbox{position:relative;width:min(94vw,1180px);max-height:92vh;padding:0;border:0;background:var(--cream);color:var(--ink);overflow:auto}
+    .lightbox{position:fixed;inset:50% auto auto 50%;width:min(94vw,1180px);height:min(90vh,700px);margin:0;padding:0;border:0;background:var(--cream);color:var(--ink);overflow:hidden;transform:translate(-50%,-50%)}
     .lightbox::backdrop{background:#100910ed;backdrop-filter:blur(5px)}
-    .lightbox-layout{display:grid;min-height:600px;grid-template-columns:minmax(0,1.65fr) minmax(310px,.75fr)}
-    .lightbox-visual{display:flex;min-height:600px;padding:1.25rem;align-items:center;justify-content:center;background:var(--cream)}
-    .lightbox img{display:block;max-width:100%;max-height:82vh;object-fit:contain;box-shadow:0 18px 55px #0008}
-    .lightbox-details{display:flex;padding:clamp(2.25rem,4vw,4rem);flex-direction:column;justify-content:center}
+    .lightbox-layout{display:grid;height:100%;min-height:0;grid-template-columns:minmax(0,1.65fr) minmax(310px,.75fr)}
+    .lightbox-visual{display:flex;height:100%;min-height:0;padding:1.25rem;align-items:center;justify-content:center;background:var(--cream)}
+    .lightbox img{display:block;max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 18px 55px #0008}
+    .lightbox-details{position:relative;display:flex;min-height:0;padding:clamp(2.25rem,4vw,4rem);flex-direction:column;justify-content:center;overflow:hidden}
     .lightbox-details h3{margin:0;font:400 clamp(2rem,3vw,3rem)/1.12 var(--serif)}
     .lightbox-location{margin:.85rem 0 0;color:#6b6067;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
     .lightbox-rule{width:56px;margin:2rem 0;border:0;border-top:1px solid #76546a80}
     .lightbox-scripture{margin:0;color:#493d45;font:italic 1.05rem/1.75 var(--serif)}
     .lightbox-reference{display:block;margin-top:.8rem;color:#76546a;font:500 .7rem/1.4 var(--sans);font-style:normal;letter-spacing:.14em;text-transform:uppercase}
-    .lightbox-close{position:fixed;z-index:2;top:calc((100vh - min(92vh,600px))/2 + .8rem);right:calc((100vw - min(94vw,1180px))/2 + .8rem);display:grid;width:46px;height:46px;padding:0;place-items:center;border:1px solid var(--deep);border-radius:50%;background:var(--deep);box-shadow:0 6px 18px #180f1838;color:var(--white);font-size:1.65rem;line-height:1;cursor:pointer}
+    .lightbox-close{position:absolute;z-index:2;top:.8rem;right:.8rem;display:grid;width:46px;height:46px;padding:0;place-items:center;border:1px solid var(--deep);border-radius:50%;background:var(--deep);box-shadow:0 6px 18px #180f1838;color:var(--white);font-size:1.65rem;line-height:1;cursor:pointer}
 
     .site-footer{background:var(--deep);border-top:1px solid #ffffff17}
     .footer-inner{display:grid;min-height:76px;width:min(100% - 3rem,1180px);margin-inline:auto;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem}
@@ -89,11 +89,17 @@
       .gallery-heading{margin-bottom:1.75rem}
       .collection-inner{width:min(100% - 2rem,1180px)}
       .gallery-grid{columns:1}
-      .lightbox-layout{min-height:0;grid-template-columns:1fr}
-      .lightbox-visual{min-height:0;padding:.75rem}      .lightbox img{max-height:56vh}
-      .lightbox-close{top:calc(4vh + .8rem);right:calc(3vw + .8rem)}
-      .lightbox-details{padding:2rem 1.5rem 2.5rem}
-      .lightbox-rule{margin:1.5rem 0}
+      .lightbox{width:94vw;height:92vh}
+      .lightbox-layout{height:100%;min-height:0;grid-template-columns:1fr;grid-template-rows:minmax(0,58%) minmax(0,42%)}
+      .lightbox-visual{height:100%;min-height:0;padding:.75rem}
+      .lightbox img{max-height:100%}
+      .lightbox-details{min-height:0;padding:1.35rem 1.25rem 1.5rem;overflow:hidden}
+      .lightbox-details h3{font-size:clamp(1.5rem,8vw,2.15rem)}
+      .lightbox-location{margin-top:.55rem;font-size:.72rem}
+      .lightbox-rule{margin:1rem 0}
+      .lightbox-scripture{font-size:.92rem;line-height:1.5}
+      .lightbox-reference{margin-top:.5rem}
+      .lightbox-close{top:.65rem;right:.65rem;width:40px;height:40px;font-size:1.4rem}
       .footer-inner{grid-template-columns:1fr auto;padding:1.2rem 0}
       .footer-devotion{display:none}
       .social-links{justify-self:end}
@@ -144,10 +150,10 @@
   </main>
 
   <dialog class="lightbox" aria-label="Expanded photograph">
-    <button class="lightbox-close" type="button" aria-label="Close enlarged photograph">&times;</button>
     <div class="lightbox-layout">
       <div class="lightbox-visual"><img src="" alt=""></div>
       <div class="lightbox-details">
+        <button class="lightbox-close" type="button" aria-label="Close enlarged photograph">&times;</button>
         <h3></h3>
         <p class="lightbox-location"></p>
         <hr class="lightbox-rule">
@@ -164,9 +170,11 @@
     menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));
     document.querySelector('#year').textContent=new Date().getFullYear();
     const lightbox=document.querySelector('.lightbox'),lightboxImage=lightbox.querySelector('img'),lightboxTitle=lightbox.querySelector('h3'),lightboxLocation=lightbox.querySelector('.lightbox-location'),lightboxVerse=lightbox.querySelector('.lightbox-scripture span'),lightboxReference=lightbox.querySelector('.lightbox-reference');
-    document.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>{const image=item.querySelector('img');lightboxImage.src=item.dataset.full;lightboxImage.alt=image.alt;lightboxTitle.textContent=item.dataset.title;lightboxLocation.textContent=item.dataset.location;lightboxVerse.textContent=`“${item.dataset.scripture}”`;lightboxReference.textContent=`— ${item.dataset.reference}`;lightbox.showModal()}));
+    let galleryScrollY=0;
+    document.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>{const image=item.querySelector('img');galleryScrollY=window.scrollY;lightboxImage.src=item.dataset.full;lightboxImage.alt=image.alt;lightboxTitle.textContent=item.dataset.title;lightboxLocation.textContent=item.dataset.location;lightboxVerse.textContent=`“${item.dataset.scripture}”`;lightboxReference.textContent=`— ${item.dataset.reference}`;lightbox.showModal();lightbox.scrollTop=0;document.body.style.position='fixed';document.body.style.top=`-${galleryScrollY}px`;document.body.style.width='100%'}));
     lightbox.querySelector('.lightbox-close').addEventListener('click',()=>lightbox.close());
     lightbox.addEventListener('click',event=>{if(event.target===lightbox)lightbox.close()});
+    lightbox.addEventListener('close',()=>{document.body.style.position='';document.body.style.top='';document.body.style.width='';document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,galleryScrollY);requestAnimationFrame(()=>document.documentElement.style.scrollBehavior='')});
   </script>
 </body>
 </html>
