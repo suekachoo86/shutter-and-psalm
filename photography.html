@@ -46,12 +46,12 @@
     .gallery-item:hover img,.gallery-item:focus-visible img{filter:brightness(1.07);transform:scale(1.025)}
     .gallery-item:focus-visible{outline:2px solid var(--rose);outline-offset:4px}
     .lightbox{position:fixed;inset:50% auto auto 50%;width:min(94vw,1180px);height:min(90vh,700px);margin:0;padding:0;border:0;background:var(--cream);color:var(--ink);overflow:hidden;transform:translate(-50%,-50%)}
-    .lightbox{position:fixed}\n    .lightbox::backdrop{background:#100910ed;backdrop-filter:blur(5px)}
-    .lightbox-layout{display:grid;height:100%;min-height:0;grid-template-columns:minmax(0,1.65fr) minmax(310px,.75fr)}
+    .lightbox::backdrop{background:#100910ed;backdrop-filter:blur(5px)}
+    .lightbox-layout{display:grid;height:100%;min-height:0;grid-template-columns:minmax(0,1.45fr) minmax(380px,.85fr)}
     .lightbox-visual{display:flex;height:100%;min-height:0;padding:1.25rem;align-items:center;justify-content:center;background:var(--cream)}
     .lightbox img{display:block;max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 18px 55px #0008}
-    .lightbox-details{position:relative;display:flex;min-height:0;padding:clamp(2.25rem,4vw,4rem);flex-direction:column;justify-content:center;overflow:hidden}
-    .lightbox-details h3{margin:0;font:400 clamp(2rem,3vw,3rem)/1.12 var(--serif)}
+    .lightbox-details{position:relative;display:flex;min-width:0;min-height:0;padding:clamp(2.25rem,3vw,3.25rem);flex-direction:column;justify-content:center;overflow:hidden}
+    .lightbox-details h3{max-width:100%;margin:0;font:400 clamp(2rem,3vw,3rem)/1.12 var(--serif);overflow-wrap:break-word}
     .lightbox-location{margin:.85rem 0 0;color:#6b6067;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
     .lightbox-rule{width:56px;margin:2rem 0;border:0;border-top:1px solid #76546a80}
     .lightbox-scripture{margin:0;color:#493d45;font:italic 1.05rem/1.75 var(--serif)}
@@ -100,7 +100,7 @@
       .lightbox-rule{margin:1rem 0}
       .lightbox-scripture{font-size:.92rem;line-height:1.5}
       .lightbox-reference{margin-top:.5rem}
-      .lightbox-close{top:.65rem;right:.65rem;width:40px;height:40px;font-size:1.4rem}\n      .lightbox-details{position:relative}\n      .lightbox-close{position:absolute;top:.85rem;right:.85rem}
+      .lightbox-close{top:.85rem;right:.85rem;width:40px;height:40px;font-size:1.4rem}
       .footer-inner{grid-template-columns:1fr auto;padding:1.2rem 0}
       .footer-devotion{display:none}
       .social-links{justify-self:end}
