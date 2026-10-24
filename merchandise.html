@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="A preview of future faith-inspired gifts and everyday goods from Shutter & Psalm Creative.">
+  <title>Faith in the Everyday | Shutter &amp; Psalm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/shutter-and-psalm-monogram.png">
+  <style>
+    :root{--ink:#2b202a;--deep:#180f18;--plum:#5b354a;--rose:#b99a98;--mauve:#d9c5c1;--cream:#f3f0e9;--white:#fffdf8;--serif:"Libre Baskerville",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 var(--sans)}
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    button,input{font:inherit}
+    .shell{width:min(100% - 3rem,1180px);margin-inline:auto}
+    .site-header{position:absolute;z-index:20;top:0;right:0;left:0;display:flex;min-height:76px;padding:0 2rem;align-items:center;justify-content:space-between;background:#180f18b8;border-bottom:1px solid #ffffff24;backdrop-filter:blur(8px)}
+    .header-mark{display:block;width:76px;height:72px;background:var(--white);-webkit-mask:url("assets/shutter-and-psalm-monogram.png") center/contain no-repeat;mask:url("assets/shutter-and-psalm-monogram.png") center/contain no-repeat}
+    .nav-links{display:flex;margin:0;padding:0;align-items:center;gap:clamp(1rem,2.4vw,2rem);list-style:none}
+    .nav-links a{color:var(--white);font-size:.76rem;font-weight:600;letter-spacing:.14em;text-decoration:none;text-transform:uppercase}
+    .nav-links a:hover,.nav-links a:focus-visible{text-decoration:underline;text-underline-offset:.35rem}
+    .cart-link{display:grid;width:38px;height:38px;place-items:center}.cart-link svg{width:18px}.menu-button{display:none;border:0;background:transparent;color:var(--white);cursor:pointer}
+
+    .hero{position:relative;display:flex;min-height:620px;padding-top:76px;align-items:center;overflow:hidden;background:url("assets/bible_study.jpg") center 48%/cover no-repeat;color:var(--white);isolation:isolate}
+    .hero::after{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#180f18ee 0%,#180f18c7 38%,#180f1852 72%,#180f182e 100%),linear-gradient(180deg,#180f181c 40%,#180f188a 100%);content:""}
+    .hero-copy{width:min(100% - 3rem,1180px);margin-inline:auto;padding:6.5rem 0 5rem}
+    .eyebrow{margin:0 0 1rem;color:#ead8d2;font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase}
+    .hero h1{max-width:680px;margin:0;font:400 clamp(3rem,6vw,5.4rem)/1.06 var(--serif);letter-spacing:-.04em}
+    .hero-description{max-width:540px;margin:1.35rem 0 0;color:#fffdf8dc;font-size:clamp(1rem,1.4vw,1.16rem);line-height:1.75}
+    .hero-link{display:inline-flex;margin-top:2rem;padding:.9rem 1.4rem;align-items:center;gap:.8rem;background:var(--rose);color:var(--white);font-size:.7rem;font-weight:600;letter-spacing:.16em;text-decoration:none;text-transform:uppercase;transition:.2s}
+    .hero-link:hover,.hero-link:focus-visible{background:var(--plum);transform:translateY(-2px)}
+
+    .section-heading{margin:0 0 2.25rem;text-align:center}.section-heading h2{margin:0;color:var(--deep);font:400 clamp(2.15rem,4vw,3.35rem)/1.15 var(--serif);letter-spacing:-.025em}.section-heading p{max-width:610px;margin:.75rem auto 0;color:#2b202aa3;font-size:.95rem}
+    .categories{padding:5rem 0 5.5rem;background:var(--cream)}
+    .category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .category-card{position:relative;min-width:0;overflow:hidden;background:var(--white);box-shadow:0 12px 28px #2b202a14}
+    .category-visual{position:relative;display:grid;min-height:310px;place-items:center;overflow:hidden;background:linear-gradient(145deg,#e7ddd4,#cbb5b1)}
+    .category-visual::before{position:absolute;inset:0;background:radial-gradient(circle at 25% 20%,#fffdf8a8,transparent 32%),linear-gradient(120deg,transparent 45%,#5b354a10 46% 54%,transparent 55%);content:""}
+    .category-label{display:flex;min-height:72px;padding:1rem 1.25rem;align-items:center;justify-content:space-between;background:var(--mauve);font:400 1.12rem/1.3 var(--serif)}
+    .category-label span:last-child{font-family:var(--sans);font-size:1.2rem}
+    .product-shape{position:relative;z-index:1;background-position:center;background-size:cover;box-shadow:0 18px 30px #2b202a33}
+    .mug{width:140px;height:170px;border-radius:8px 8px 22px 22px;background-image:linear-gradient(#fffdf81e,#fffdf81e),url("assets/prints.jpg")}
+    .mug::after{position:absolute;top:34px;right:-45px;width:56px;height:78px;border:15px solid #efe6dd;border-left:0;border-radius:0 35px 35px 0;content:""}
+    .pad{width:215px;height:164px;border-radius:16px;background-image:url("assets/seasonal-designs.jpg");transform:perspective(700px) rotateX(9deg) rotateZ(-3deg)}
+    .card-stack{width:150px;height:195px;border:9px solid var(--white);background-image:url("assets/framed-pieces.jpg");transform:rotate(2deg)}
+    .card-stack::before{position:absolute;z-index:-1;inset:8px -18px -18px 8px;background:#e8ddd4;border:8px solid var(--white);content:"";transform:rotate(-7deg)}
+    .tote{width:175px;height:190px;background-image:linear-gradient(#fffdf82b,#fffdf82b),url("assets/canvas.jpg");clip-path:polygon(7% 12%,93% 12%,100% 100%,0 100%)}
+    .tote::before{position:absolute;top:-48px;left:47px;width:82px;height:78px;border:12px solid #d8c6b7;border-bottom:0;border-radius:50% 50% 0 0;content:""}
+
+    .favorites{padding:5rem 0 5.5rem;background:var(--mauve)}
+    .favorite-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .favorite-card{overflow:hidden;background:var(--cream);box-shadow:0 12px 28px #2b202a12}
+    .favorite-image{display:grid;min-height:300px;padding:1rem;place-items:center;background:#f0e8df}
+    .favorite-image .product-shape{transform:scale(.92)}
+    .favorite-card:nth-child(2) .pad{background-image:url("assets/digital-downloads.jpg");transform:perspective(700px) rotateX(9deg) rotateZ(-3deg) scale(.92)}
+    .favorite-card:nth-child(3) .card-stack{background-image:url("assets/prints.jpg")}
+    .favorite-card:nth-child(4) .tote{background-image:linear-gradient(#fffdf82b,#fffdf82b),url("assets/sunset2.jpg")}
+    .favorite-copy{padding:1.25rem 1.1rem 1.35rem;text-align:center}.favorite-copy h3{margin:0;color:var(--deep);font:400 1.05rem/1.45 var(--serif)}.favorite-copy p{margin:.35rem 0 0;color:#765f6c;font-size:.64rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
+
+    .newsletter-section{padding:3.5rem 1.5rem;background:var(--white)}
+    .newsletter-inner{display:grid;width:min(100%,1040px);margin-inline:auto;grid-template-columns:minmax(220px,.8fr) minmax(360px,1.2fr);align-items:center;gap:3rem}
+    .newsletter-title{margin:0;color:var(--deep);font:400 clamp(1.8rem,3vw,2.55rem)/1.2 var(--serif)}.newsletter-copy{margin:.65rem 0 0;color:#2b202aa8;font-size:.9rem;line-height:1.6}
+    .newsletter-form .formkit-alert{margin:0 0 .75rem;padding:.7rem;border-radius:4px;list-style:none;text-align:center}.newsletter-form .formkit-alert:empty{display:none}.newsletter-form .formkit-alert-error{background:#f9e8e5;color:#7a2f2a}
+    .newsletter-form .formkit-fields{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.65rem}.newsletter-form .formkit-field{min-width:0}.newsletter-form .formkit-input{width:100%;min-height:48px;padding:.75rem 1rem;border:1px solid #2b202a4d;border-radius:2px;background:var(--white);color:var(--ink)}
+    .newsletter-form .formkit-input:focus{border-color:var(--plum);outline:2px solid #5b354a24}.newsletter-form .formkit-submit{min-height:48px;padding:0;border:0;border-radius:2px;background:var(--plum);color:var(--white);cursor:pointer;font:500 .72rem var(--sans);letter-spacing:.13em;text-transform:uppercase}.newsletter-form .formkit-submit>span{display:block;padding:.85rem 1.35rem}.newsletter-form .formkit-submit:hover,.newsletter-form .formkit-submit:focus-visible{background:var(--deep)}.newsletter-form .formkit-spinner{display:none}.newsletter-form .formkit-powered-by-convertkit-container{margin-top:.45rem}.newsletter-form .formkit-powered-by-convertkit{color:#2b202a7d;font-size:.66rem;text-decoration:none}
+
+    .site-footer{background:var(--deep);border-top:1px solid #ffffff17}.footer-inner{display:grid;min-height:84px;width:min(100% - 3rem,1180px);margin-inline:auto;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem}.copyright,.footer-devotion{margin:0;color:#ffffff9e;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}.footer-devotion{justify-self:end}.social-links{display:flex;gap:.8rem}.social-links a{display:grid;width:34px;height:34px;place-items:center;border:1px solid #fffdf86b;border-radius:50%;color:var(--white);text-decoration:none;transition:.2s}.social-links svg{display:block;width:17px;height:17px}.social-links a:hover,.social-links a:focus-visible{background:#fffdf81a;border-color:var(--white);transform:translateY(-2px)}
+
+    @media(max-width:980px){.category-grid,.favorite-grid{grid-template-columns:repeat(2,1fr)}.newsletter-inner{grid-template-columns:1fr;gap:1.5rem;text-align:center}}
+    @media(max-width:900px){.nav-links{position:absolute;z-index:30;top:68px;right:1.5rem;display:none;width:min(280px,calc(100vw - 3rem));padding:1rem;flex-direction:column;align-items:stretch;gap:0;background:#f3f0e9fa;border:1px solid #2b202a29}.nav-links.open{display:flex}.nav-links a{display:block;padding:.75rem;color:var(--deep)}.menu-button{display:grid;width:42px;height:42px;place-items:center}.cart-item{display:none}}
+    @media(max-width:640px){.shell{width:min(100% - 2rem,1180px)}.site-header{min-height:68px;padding:0 .9rem}.header-mark{width:64px;height:60px}.hero{min-height:610px;padding-top:68px;background-position:58% center}.hero::after{background:linear-gradient(90deg,#180f18ed 0%,#180f18c7 68%,#180f186b 100%),linear-gradient(180deg,#180f181c 40%,#180f18a1 100%)}.hero-copy{width:min(100% - 2rem,1180px);padding:5.5rem 0 4rem}.hero h1{font-size:clamp(2.7rem,13vw,3.9rem)}.hero-description{max-width:360px}.categories,.favorites{padding:4rem 0}.section-heading{margin-bottom:1.75rem}.category-grid,.favorite-grid{grid-template-columns:1fr 1fr;gap:.7rem}.category-visual,.favorite-image{min-height:210px}.category-label{min-height:62px;padding:.8rem;font-size:.88rem}.mug{width:88px;height:112px}.mug::after{top:24px;right:-31px;width:39px;height:52px;border-width:10px}.pad{width:140px;height:108px}.card-stack{width:98px;height:132px;border-width:6px}.tote{width:112px;height:128px}.tote::before{top:-32px;left:31px;width:52px;height:53px;border-width:8px}.favorite-image .product-shape{transform:scale(.8)}.favorite-card:nth-child(2) .pad{transform:perspective(700px) rotateX(9deg) rotateZ(-3deg) scale(.8)}.favorite-copy{padding:1rem .65rem}.favorite-copy h3{font-size:.88rem}.favorite-copy p{font-size:.56rem}.newsletter-section{padding:3rem 1.25rem}.newsletter-form .formkit-fields{grid-template-columns:1fr}.newsletter-form .formkit-submit{width:100%}.footer-inner{grid-template-columns:1fr auto;padding:1.2rem 0}.footer-devotion{display:none}.social-links{justify-self:end}}
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Primary navigation">
+    <a href="index.html" aria-label="Shutter and Psalm home"><span class="header-mark" aria-hidden="true"></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Open navigation menu"><svg viewBox="0 0 24 24" width="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    <ul class="nav-links" id="primary-menu">
+      <li><a href="index.html">Home</a></li><li><a href="photography.html">Gallery</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="journal.html">Journal</a></li><li><a href="contact.html">Contact</a></li>
+      <li class="cart-item"><a class="cart-link" href="shop.html" aria-label="View shop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H7M10 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+    </ul>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Faith rooted · Beauty filled · Everyday living</p>
+        <h1>Faith in<br>the Everyday</h1>
+        <p class="hero-description">Meaningful pieces made for ordinary moments—designed to bring beauty, encouragement, and truth into the rhythms of daily life.</p>
+        <a class="hero-link" href="#categories">Explore the collections <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="categories" id="categories" aria-labelledby="categories-title">
+      <div class="shell">
+        <div class="section-heading"><h2 id="categories-title">Shop by Category</h2><p>Everyday pieces made to carry a meaningful message beyond the walls.</p></div>
+        <div class="category-grid">
+          <article class="category-card"><div class="category-visual"><div class="product-shape mug" aria-hidden="true"></div></div><div class="category-label"><span>Mugs</span><span aria-hidden="true">→</span></div></article>
+          <article class="category-card"><div class="category-visual"><div class="product-shape pad" aria-hidden="true"></div></div><div class="category-label"><span>Mouse Pads</span><span aria-hidden="true">→</span></div></article>
+          <article class="category-card"><div class="category-visual"><div class="product-shape card-stack" aria-hidden="true"></div></div><div class="category-label"><span>Greeting Cards</span><span aria-hidden="true">→</span></div></article>
+          <article class="category-card"><div class="category-visual"><div class="product-shape tote" aria-hidden="true"></div></div><div class="category-label"><span>Tote Bags</span><span aria-hidden="true">→</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="favorites" aria-labelledby="favorites-title">
+      <div class="shell">
+        <div class="section-heading"><h2 id="favorites-title">Featured Favorites</h2><p>A preview of the kinds of pieces that may become part of the collection.</p></div>
+        <div class="favorite-grid">
+          <article class="favorite-card"><div class="favorite-image"><div class="product-shape mug" aria-hidden="true"></div></div><div class="favorite-copy"><h3>Grace for Tomorrow Mug</h3><p>Coming soon</p></div></article>
+          <article class="favorite-card"><div class="favorite-image"><div class="product-shape pad" aria-hidden="true"></div></div><div class="favorite-copy"><h3>Be Still Desk Mat</h3><p>Coming soon</p></div></article>
+          <article class="favorite-card"><div class="favorite-image"><div class="product-shape card-stack" aria-hidden="true"></div></div><div class="favorite-copy"><h3>New Mercies Card Set</h3><p>Coming soon</p></div></article>
+          <article class="favorite-card"><div class="favorite-image"><div class="product-shape tote" aria-hidden="true"></div></div><div class="favorite-copy"><h3>Carry What Is True Tote</h3><p>Coming soon</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-section" aria-labelledby="newsletter-title">
+      <div class="newsletter-inner">
+        <div><h2 class="newsletter-title" id="newsletter-title">Join the List</h2><p class="newsletter-copy">Be the first to hear about new designs, future gifts, shop updates, and occasional freebies.</p></div>
+        <div>
+          <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+          <form action="https://app.kit.com/forms/9963234/subscriptions" class="seva-form formkit-form newsletter-form" method="post" data-sv-form="9963234" data-uid="e51b7fcd24" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;}},&quot;version&quot;:&quot;5&quot;}">
+            <div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert" aria-live="polite"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><label for="merch-newsletter-email" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Email address</label><input id="merch-newsletter-email" class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" autocomplete="email" required type="email"></div><button data-element="submit" class="formkit-submit" type="submit"><span>Join the List</span></button></div><div class="formkit-powered-by-convertkit-container"><a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" target="_blank" rel="nofollow noopener">Built with Kit</a></div></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><p class="copyright">© <span id="year"></span> Shutter &amp; Psalm</p><div class="social-links" aria-label="Social media links"><a href="https://www.instagram.com/shutterandpsalm/" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/profile.php?id=61583411422359" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Facebook" title="Facebook"><svg viewBox="0 0 320 512" aria-hidden="true"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a></div><p class="footer-devotion">Faith · Art · Everyday Grace</p></div></footer>
+  <script>
+    const menuButton=document.querySelector('.menu-button'),menu=document.querySelector('.nav-links');menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));document.querySelector('#year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
