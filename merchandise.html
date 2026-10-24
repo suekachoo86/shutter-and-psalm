@@ -29,7 +29,6 @@
     .hero{position:relative;display:flex;min-height:620px;padding-top:76px;align-items:center;overflow:hidden;background:url("assets/bible_study.jpg") center 48%/cover no-repeat;color:var(--white);isolation:isolate}
     .hero::after{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#180f18ee 0%,#180f18c7 38%,#180f1852 72%,#180f182e 100%),linear-gradient(180deg,#180f181c 40%,#180f188a 100%);content:""}
     .hero-copy{width:min(100% - 3rem,1180px);margin-inline:auto;padding:6.5rem 0 5rem}
-    .eyebrow{margin:0 0 1rem;color:#ead8d2;font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase}
     .hero h1{max-width:680px;margin:0;font:400 clamp(3rem,6vw,5.4rem)/1.06 var(--serif);letter-spacing:-.04em}
     .hero-description{max-width:540px;margin:1.35rem 0 0;color:#fffdf8dc;font-size:clamp(1rem,1.4vw,1.16rem);line-height:1.75}
     .hero-link{display:inline-flex;margin-top:2rem;padding:.9rem 1.4rem;align-items:center;gap:.8rem;background:var(--rose);color:var(--white);font-size:.7rem;font-weight:600;letter-spacing:.16em;text-decoration:none;text-transform:uppercase;transition:.2s}
@@ -39,27 +38,16 @@
     .categories{padding:5rem 0 5.5rem;background:var(--cream)}
     .category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
     .category-card{position:relative;min-width:0;overflow:hidden;background:var(--white);box-shadow:0 12px 28px #2b202a14}
-    .category-visual{position:relative;display:grid;min-height:310px;place-items:center;overflow:hidden;background:linear-gradient(145deg,#e7ddd4,#cbb5b1)}
-    .category-visual::before{position:absolute;inset:0;background:radial-gradient(circle at 25% 20%,#fffdf8a8,transparent 32%),linear-gradient(120deg,transparent 45%,#5b354a10 46% 54%,transparent 55%);content:""}
+    .category-visual{position:relative;overflow:hidden;aspect-ratio:226/232;background:#e7ddd4}
     .category-label{display:flex;min-height:72px;padding:1rem 1.25rem;align-items:center;justify-content:space-between;background:var(--mauve);font:400 1.12rem/1.3 var(--serif)}
     .category-label span:last-child{font-family:var(--sans);font-size:1.2rem}
-    .product-shape{position:relative;z-index:1;background-position:center;background-size:cover;box-shadow:0 18px 30px #2b202a33}
-    .mug{width:140px;height:170px;border-radius:8px 8px 22px 22px;background-image:linear-gradient(#fffdf81e,#fffdf81e),url("assets/prints.jpg")}
-    .mug::after{position:absolute;top:34px;right:-45px;width:56px;height:78px;border:15px solid #efe6dd;border-left:0;border-radius:0 35px 35px 0;content:""}
-    .pad{width:215px;height:164px;border-radius:16px;background-image:url("assets/seasonal-designs.jpg");transform:perspective(700px) rotateX(9deg) rotateZ(-3deg)}
-    .card-stack{width:150px;height:195px;border:9px solid var(--white);background-image:url("assets/framed-pieces.jpg");transform:rotate(2deg)}
-    .card-stack::before{position:absolute;z-index:-1;inset:8px -18px -18px 8px;background:#e8ddd4;border:8px solid var(--white);content:"";transform:rotate(-7deg)}
-    .tote{width:175px;height:190px;background-image:linear-gradient(#fffdf82b,#fffdf82b),url("assets/canvas.jpg");clip-path:polygon(7% 12%,93% 12%,100% 100%,0 100%)}
-    .tote::before{position:absolute;top:-48px;left:47px;width:82px;height:78px;border:12px solid #d8c6b7;border-bottom:0;border-radius:50% 50% 0 0;content:""}
+    .product-photo{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+    .category-card:hover .product-photo,.favorite-card:hover .product-photo{transform:scale(1.035)}
 
     .favorites{padding:5rem 0 5.5rem;background:var(--mauve)}
     .favorite-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
     .favorite-card{overflow:hidden;background:var(--cream);box-shadow:0 12px 28px #2b202a12}
-    .favorite-image{display:grid;min-height:300px;padding:1rem;place-items:center;background:#f0e8df}
-    .favorite-image .product-shape{transform:scale(.92)}
-    .favorite-card:nth-child(2) .pad{background-image:url("assets/digital-downloads.jpg");transform:perspective(700px) rotateX(9deg) rotateZ(-3deg) scale(.92)}
-    .favorite-card:nth-child(3) .card-stack{background-image:url("assets/prints.jpg")}
-    .favorite-card:nth-child(4) .tote{background-image:linear-gradient(#fffdf82b,#fffdf82b),url("assets/sunset2.jpg")}
+    .favorite-image{overflow:hidden;aspect-ratio:225/253;background:#f0e8df}
     .favorite-copy{padding:1.25rem 1.1rem 1.35rem;text-align:center}.favorite-copy h3{margin:0;color:var(--deep);font:400 1.05rem/1.45 var(--serif)}.favorite-copy p{margin:.35rem 0 0;color:#765f6c;font-size:.64rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
 
     .newsletter-section{padding:3.5rem 1.5rem;background:var(--white)}
@@ -73,7 +61,7 @@
 
     @media(max-width:980px){.category-grid,.favorite-grid{grid-template-columns:repeat(2,1fr)}.newsletter-inner{grid-template-columns:1fr;gap:1.5rem;text-align:center}}
     @media(max-width:900px){.nav-links{position:absolute;z-index:30;top:68px;right:1.5rem;display:none;width:min(280px,calc(100vw - 3rem));padding:1rem;flex-direction:column;align-items:stretch;gap:0;background:#f3f0e9fa;border:1px solid #2b202a29}.nav-links.open{display:flex}.nav-links a{display:block;padding:.75rem;color:var(--deep)}.menu-button{display:grid;width:42px;height:42px;place-items:center}.cart-item{display:none}}
-    @media(max-width:640px){.shell{width:min(100% - 2rem,1180px)}.site-header{min-height:68px;padding:0 .9rem}.header-mark{width:64px;height:60px}.hero{min-height:610px;padding-top:68px;background-position:58% center}.hero::after{background:linear-gradient(90deg,#180f18ed 0%,#180f18c7 68%,#180f186b 100%),linear-gradient(180deg,#180f181c 40%,#180f18a1 100%)}.hero-copy{width:min(100% - 2rem,1180px);padding:5.5rem 0 4rem}.hero h1{font-size:clamp(2.7rem,13vw,3.9rem)}.hero-description{max-width:360px}.categories,.favorites{padding:4rem 0}.section-heading{margin-bottom:1.75rem}.category-grid,.favorite-grid{grid-template-columns:1fr 1fr;gap:.7rem}.category-visual,.favorite-image{min-height:210px}.category-label{min-height:62px;padding:.8rem;font-size:.88rem}.mug{width:88px;height:112px}.mug::after{top:24px;right:-31px;width:39px;height:52px;border-width:10px}.pad{width:140px;height:108px}.card-stack{width:98px;height:132px;border-width:6px}.tote{width:112px;height:128px}.tote::before{top:-32px;left:31px;width:52px;height:53px;border-width:8px}.favorite-image .product-shape{transform:scale(.8)}.favorite-card:nth-child(2) .pad{transform:perspective(700px) rotateX(9deg) rotateZ(-3deg) scale(.8)}.favorite-copy{padding:1rem .65rem}.favorite-copy h3{font-size:.88rem}.favorite-copy p{font-size:.56rem}.newsletter-section{padding:3rem 1.25rem}.newsletter-form .formkit-fields{grid-template-columns:1fr}.newsletter-form .formkit-submit{width:100%}.footer-inner{grid-template-columns:1fr auto;padding:1.2rem 0}.footer-devotion{display:none}.social-links{justify-self:end}}
+    @media(max-width:640px){.shell{width:min(100% - 2rem,1180px)}.site-header{min-height:68px;padding:0 .9rem}.header-mark{width:64px;height:60px}.hero{min-height:610px;padding-top:68px;background-position:58% center}.hero::after{background:linear-gradient(90deg,#180f18ed 0%,#180f18c7 68%,#180f186b 100%),linear-gradient(180deg,#180f181c 40%,#180f18a1 100%)}.hero-copy{width:min(100% - 2rem,1180px);padding:5.5rem 0 4rem}.hero h1{font-size:clamp(2.7rem,13vw,3.9rem)}.hero-description{max-width:360px}.categories,.favorites{padding:4rem 0}.section-heading{margin-bottom:1.75rem}.category-grid,.favorite-grid{grid-template-columns:1fr 1fr;gap:.7rem}.category-label{min-height:62px;padding:.8rem;font-size:.88rem}.favorite-copy{padding:1rem .65rem}.favorite-copy h3{font-size:.88rem}.favorite-copy p{font-size:.56rem}.newsletter-section{padding:3rem 1.25rem}.newsletter-form .formkit-fields{grid-template-columns:1fr}.newsletter-form .formkit-submit{width:100%}.footer-inner{grid-template-columns:1fr auto;padding:1.2rem 0}.footer-devotion{display:none}.social-links{justify-self:end}}
   </style>
 </head>
 <body>
@@ -88,7 +76,6 @@
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Faith rooted · Beauty filled · Everyday living</p>
         <h1>Faith in<br>the Everyday</h1>
         <p class="hero-description">Meaningful pieces made for ordinary moments—designed to bring beauty, encouragement, and truth into the rhythms of daily life.</p>
         <a class="hero-link" href="#categories">Explore the collections <span aria-hidden="true">→</span></a>
@@ -99,10 +86,10 @@
       <div class="shell">
         <div class="section-heading"><h2 id="categories-title">Shop by Category</h2><p>Everyday pieces made to carry a meaningful message beyond the walls.</p></div>
         <div class="category-grid">
-          <article class="category-card"><div class="category-visual"><div class="product-shape mug" aria-hidden="true"></div></div><div class="category-label"><span>Mugs</span><span aria-hidden="true">→</span></div></article>
-          <article class="category-card"><div class="category-visual"><div class="product-shape pad" aria-hidden="true"></div></div><div class="category-label"><span>Mouse Pads</span><span aria-hidden="true">→</span></div></article>
-          <article class="category-card"><div class="category-visual"><div class="product-shape card-stack" aria-hidden="true"></div></div><div class="category-label"><span>Greeting Cards</span><span aria-hidden="true">→</span></div></article>
-          <article class="category-card"><div class="category-visual"><div class="product-shape tote" aria-hidden="true"></div></div><div class="category-label"><span>Tote Bags</span><span aria-hidden="true">→</span></div></article>
+          <article class="category-card"><div class="category-visual"><img class="product-photo" src="assets/merch-category-mug.jpg" alt="Mountain artwork displayed on a ceramic mug"></div><div class="category-label"><span>Mugs</span><span aria-hidden="true">→</span></div></article>
+          <article class="category-card"><div class="category-visual"><img class="product-photo" src="assets/merch-category-mouse-pad.jpg" alt="Wildflower artwork displayed on a mouse pad"></div><div class="category-label"><span>Mouse Pads</span><span aria-hidden="true">→</span></div></article>
+          <article class="category-card"><div class="category-visual"><img class="product-photo" src="assets/merch-category-greeting-cards.jpg" alt="Faith-inspired greeting cards displayed on a table"></div><div class="category-label"><span>Greeting Cards</span><span aria-hidden="true">→</span></div></article>
+          <article class="category-card"><div class="category-visual"><img class="product-photo" src="assets/merch-category-tote.jpg" alt="Botanical artwork displayed on a canvas tote bag"></div><div class="category-label"><span>Tote Bags</span><span aria-hidden="true">→</span></div></article>
         </div>
       </div>
     </section>
@@ -111,10 +98,10 @@
       <div class="shell">
         <div class="section-heading"><h2 id="favorites-title">Featured Favorites</h2><p>A preview of the kinds of pieces that may become part of the collection.</p></div>
         <div class="favorite-grid">
-          <article class="favorite-card"><div class="favorite-image"><div class="product-shape mug" aria-hidden="true"></div></div><div class="favorite-copy"><h3>Grace for Tomorrow Mug</h3><p>Coming soon</p></div></article>
-          <article class="favorite-card"><div class="favorite-image"><div class="product-shape pad" aria-hidden="true"></div></div><div class="favorite-copy"><h3>Be Still Desk Mat</h3><p>Coming soon</p></div></article>
-          <article class="favorite-card"><div class="favorite-image"><div class="product-shape card-stack" aria-hidden="true"></div></div><div class="favorite-copy"><h3>New Mercies Card Set</h3><p>Coming soon</p></div></article>
-          <article class="favorite-card"><div class="favorite-image"><div class="product-shape tote" aria-hidden="true"></div></div><div class="favorite-copy"><h3>Carry What Is True Tote</h3><p>Coming soon</p></div></article>
+          <article class="favorite-card"><div class="favorite-image"><img class="product-photo" src="assets/merch-featured-mug.jpg" alt="Grace for Tomorrow ceramic mug"></div><div class="favorite-copy"><h3>Grace for Tomorrow Mug</h3><p>Coming soon</p></div></article>
+          <article class="favorite-card"><div class="favorite-image"><img class="product-photo" src="assets/merch-featured-desk-mat.jpg" alt="Be Still and Know desk mat"></div><div class="favorite-copy"><h3>Be Still Desk Mat</h3><p>Coming soon</p></div></article>
+          <article class="favorite-card"><div class="favorite-image"><img class="product-photo" src="assets/merch-featured-card-set.jpg" alt="New Mercies botanical greeting card set"></div><div class="favorite-copy"><h3>New Mercies Card Set</h3><p>Coming soon</p></div></article>
+          <article class="favorite-card"><div class="favorite-image"><img class="product-photo" src="assets/merch-featured-tote.jpg" alt="Carry What Is True mountain tote bag"></div><div class="favorite-copy"><h3>Carry What Is True Tote</h3><p>Coming soon</p></div></article>
         </div>
       </div>
     </section>
