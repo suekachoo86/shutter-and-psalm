@@ -3,25 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Shop the Shutter & Psalm collection of Scripture-inspired digital art, prints, framed pieces, and canvas.">
+  <meta name="description" content="Shop Scripture-inspired artwork from Shutter & Psalm, available as digital downloads, framed art, and canvas.">
   <title>Shop | Shutter &amp; Psalm</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/shutter-and-psalm-monogram.png">
   <style>
-    :root{--ink:#2b202a;--deep:#180f18;--plum:#5b354a;--rose:#b99a98;--sage:#879077;--cream:#f3f0e9;--white:#fffdf8;--serif:"Libre Baskerville",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
-    *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 var(--sans)}img{display:block;max-width:100%}a{color:inherit}.shell{width:min(100% - 3rem,1040px);margin-inline:auto}.eyebrow{margin:0;color:#785165;font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase}
-    .site-header{position:relative;z-index:20;display:flex;min-height:76px;padding:0 2rem;align-items:center;justify-content:space-between;background:var(--cream);border-bottom:1px solid #2b202a1c}.header-mark{display:block;width:76px;height:72px;background:var(--deep);-webkit-mask:url("assets/shutter-and-psalm-monogram.png") center/contain no-repeat;mask:url("assets/shutter-and-psalm-monogram.png") center/contain no-repeat}.nav-links{display:flex;margin:0;padding:0;align-items:center;gap:clamp(1rem,2.4vw,2rem);list-style:none}.nav-links a{color:var(--deep);font-size:.76rem;font-weight:600;letter-spacing:.14em;text-decoration:none;text-transform:uppercase}.nav-links a:hover,.nav-links a:focus-visible,.nav-links a[aria-current="page"]{text-decoration:underline;text-underline-offset:.35rem}.cart-link{display:grid;width:38px;height:38px;place-items:center}.cart-link svg{width:18px}.menu-button{display:none;border:0;background:transparent;color:var(--deep);cursor:pointer}
-    .shop-hero{background:var(--cream);text-align:center;border-bottom:0}.hero-inner{width:min(100% - 3rem,760px);margin-inline:auto;padding:2.7rem 0 1.15rem}.shop-hero h1{margin:0 0 .45rem;color:var(--deep);font:400 clamp(2.35rem,5vw,3.75rem)/1.15 var(--serif);letter-spacing:-.025em}.shop-hero p{max-width:600px;margin:0 auto;color:#2b202ab5;font:400 clamp(.94rem,1.4vw,1.05rem)/1.7 var(--sans)}.filter-bar{display:flex;margin-top:1.15rem;padding-top:1rem;align-items:center;justify-content:center;gap:clamp(.4rem,2vw,1.2rem);border-top:1px solid var(--rose)}.filter-button{min-width:112px;padding:.58rem 1rem;border:0;border-radius:999px;background:transparent;color:#2b202aa8;font:500 .68rem/1 var(--sans);letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:.2s}.filter-button:hover,.filter-button:focus-visible{background:#b99a9826;color:var(--deep)}.filter-button.active{background:var(--rose);color:var(--white)}
-    .catalog{padding:1.15rem 0 3.25rem;background:var(--cream)}.design-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem 1.2rem}.design-card{color:var(--ink);text-align:center}.design-card[hidden]{display:none}.design-image{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;transition:filter .2s,transform .2s}.design-card:hover .design-image{filter:brightness(.97);transform:translateY(-2px)}.design-card h3{margin:.45rem 0 .12rem;color:var(--deep);font:400 1rem/1.35 var(--serif)}.formats{margin:0;color:#2b202a8f;font-size:.66rem;font-weight:400;letter-spacing:.02em}
-    .message-band{display:grid;min-height:110px;padding:1.6rem;place-items:center;background:linear-gradient(135deg,#4e3042,#2b202a);color:var(--white);text-align:center}.message-band p{margin:0;font:400 clamp(1.05rem,2.2vw,1.45rem)/1.5 var(--serif);letter-spacing:.09em}
+    :root{--ink:#2b202a;--deep:#180f18;--plum:#5b354a;--rose:#b99a98;--mauve:#d9c5c1;--cream:#f3f0e9;--white:#fffdf8;--serif:"Libre Baskerville",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 var(--sans)}
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    button,input{font:inherit}
+    .shell{width:min(100% - 3rem,1180px);margin-inline:auto}
 
-    .newsletter-section{padding:3.6rem 1.25rem;background:var(--white);color:var(--ink);text-align:center}.newsletter-inner{width:min(100%,700px);margin-inline:auto}.newsletter-title{margin:0;color:var(--deep);font:400 clamp(1.85rem,4vw,2.7rem)/1.2 var(--serif)}.newsletter-copy{max-width:580px;margin:.8rem auto 1.6rem;color:#2b202abf;font-size:.95rem;line-height:1.65}.newsletter-form{max-width:650px;margin-inline:auto}.newsletter-form .formkit-alert{margin:0 0 1rem;padding:.75rem 1rem;border-radius:4px;list-style:none;text-align:center}.newsletter-form .formkit-alert:empty{display:none}.newsletter-form .formkit-alert-error{background:#f9e8e5;color:#7a2f2a}.newsletter-form .formkit-fields{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.65rem}.newsletter-form .formkit-field{min-width:0}.newsletter-form .formkit-input{width:100%;min-height:48px;padding:.75rem 1rem;border:1px solid #2b202a4d;border-radius:4px;background:var(--white);color:var(--ink);font:400 .95rem var(--sans)}.newsletter-form .formkit-input:focus{border-color:var(--plum);outline:2px solid #5b354a24;outline-offset:1px}.newsletter-form .formkit-submit{position:relative;min-height:48px;padding:0;border:0;border-radius:4px;background:var(--plum);color:var(--white);cursor:pointer;font:500 .78rem var(--sans);letter-spacing:.13em;text-transform:uppercase;transition:background .2s,transform .2s}.newsletter-form .formkit-submit>span{display:block;padding:.85rem 1.35rem}.newsletter-form .formkit-submit:hover,.newsletter-form .formkit-submit:focus-visible{background:var(--deep);transform:translateY(-1px)}.newsletter-form .formkit-spinner{display:none}.newsletter-form .formkit-powered-by-convertkit-container{margin-top:.65rem}.newsletter-form .formkit-powered-by-convertkit{color:#2b202a8c;font-size:.68rem;text-decoration:none}.newsletter-form .formkit-powered-by-convertkit:hover,.newsletter-form .formkit-powered-by-convertkit:focus-visible{text-decoration:underline}
+    .site-header{position:absolute;z-index:20;top:0;right:0;left:0;display:flex;min-height:76px;padding:0 2rem;align-items:center;justify-content:space-between;background:#180f18c7;border-bottom:1px solid #ffffff24;backdrop-filter:blur(8px)}
+    .header-mark{display:block;width:76px;height:72px;background:var(--white);-webkit-mask:url("assets/shutter-and-psalm-monogram.png") center/contain no-repeat;mask:url("assets/shutter-and-psalm-monogram.png") center/contain no-repeat}
+    .nav-links{display:flex;margin:0;padding:0;align-items:center;gap:clamp(1rem,2.4vw,2rem);list-style:none}
+    .nav-links a{color:var(--white);font-size:.76rem;font-weight:600;letter-spacing:.14em;text-decoration:none;text-transform:uppercase}
+    .nav-links a:hover,.nav-links a:focus-visible,.nav-links a[aria-current="page"]{text-decoration:underline;text-underline-offset:.35rem}
+    .cart-link{display:grid;width:38px;height:38px;place-items:center}.cart-link svg{width:18px}.menu-button{display:none;border:0;background:transparent;color:var(--white);cursor:pointer}
 
-    .site-footer{background:var(--cream);border-top:1px solid #2b202a1c}.footer-inner{display:grid;min-height:84px;width:min(100% - 3rem,1180px);margin-inline:auto;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem}.copyright,.footer-devotion{margin:0;color:#2b202a8f;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}.footer-devotion{justify-self:end}.social-links{display:flex;gap:.8rem}.social-links a{display:grid;width:34px;height:34px;place-items:center;border:1px solid #2b202a52;border-radius:50%;color:var(--deep);text-decoration:none;transition:.2s}.social-links svg{display:block;width:17px;height:17px}.social-links a:hover,.social-links a:focus-visible{background:#2b202a0c;border-color:var(--deep);transform:translateY(-2px)}
-    @media(max-width:900px){.nav-links{position:absolute;z-index:30;top:68px;right:1.5rem;display:none;width:min(280px,calc(100vw - 3rem));padding:1rem;flex-direction:column;align-items:stretch;gap:0;background:#f3f0e9fa;border:1px solid #2b202a29}.nav-links.open{display:flex}.nav-links a{display:block;padding:.75rem}.menu-button{display:grid;width:42px;height:42px;place-items:center}.cart-item{display:none}.design-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:640px){.shell{width:min(100% - 1.5rem,1040px)}.site-header{min-height:68px;padding:0 .9rem}.header-mark{width:64px;height:60px}.hero-inner{width:min(100% - 2rem,760px);padding:2.25rem 0 .95rem}.shop-hero h1{font-size:2.15rem}.filter-bar{margin-top:1rem;padding-top:.85rem;gap:.15rem;overflow-x:auto;justify-content:flex-start}.filter-button{min-width:auto;padding:.55rem .72rem;font-size:.59rem;white-space:nowrap}.catalog{padding:.9rem 0 2.6rem}.design-grid{grid-template-columns:1fr 1fr;gap:1.35rem .65rem}.design-card h3{font-size:.92rem}.formats{font-size:.58rem;line-height:1.35}.message-band{min-height:100px}.newsletter-section{padding:3rem 1.25rem}.newsletter-form .formkit-fields{grid-template-columns:1fr}.newsletter-form .formkit-submit{width:100%}.footer-inner{grid-template-columns:1fr auto;padding:1.2rem 0}.footer-devotion{display:none}.social-links{justify-self:end}}
+    .shop-hero{display:grid;min-height:620px;padding-top:76px;grid-template-columns:minmax(0,46%) minmax(0,54%);background:var(--deep);color:var(--white)}
+    .hero-copy{display:flex;padding:clamp(4rem,8vw,7rem) clamp(2rem,7vw,7rem);flex-direction:column;justify-content:center;background:linear-gradient(145deg,var(--deep),#382432)}
+    .hero-copy h1{max-width:620px;margin:0;font:400 clamp(2.8rem,5.2vw,5rem)/1.08 var(--serif);letter-spacing:-.04em}
+    .hero-copy p{max-width:520px;margin:1.35rem 0 0;color:#fffdf8d6;font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.75}
+    .hero-image{min-height:544px;background:url("assets/framed-pieces.jpg") center/cover no-repeat}
+
+    .section-heading{margin:0 0 2.25rem;text-align:center}.section-heading h2{margin:0;color:var(--deep);font:400 clamp(2.15rem,4vw,3.35rem)/1.15 var(--serif);letter-spacing:-.025em}.section-heading p{max-width:650px;margin:.8rem auto 0;color:#2b202aa3;font-size:.95rem}
+    .format-section{padding:5rem 0 5.5rem;background:var(--cream)}
+    .format-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+    .format-card{overflow:hidden;background:var(--white);box-shadow:0 12px 28px #2b202a14}
+    .format-card img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .45s ease}
+    .format-card:hover img{transform:scale(1.035)}
+    .format-copy{min-height:188px;padding:1.6rem 1.55rem 1.75rem}
+    .format-copy h3{margin:0;color:var(--deep);font:400 1.35rem/1.35 var(--serif)}
+    .format-copy p{margin:.65rem 0 0;color:#2b202aa8;font-size:.9rem;line-height:1.7}
+
+    .collection{padding:5rem 0 5.5rem;background:var(--mauve)}
+    .filter-bar{display:flex;margin:0 auto 2rem;align-items:center;justify-content:center;gap:.45rem;flex-wrap:wrap}
+    .filter-button{padding:.7rem 1.1rem;border:1px solid #5b354a40;border-radius:999px;background:transparent;color:#5b354acc;font:600 .64rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.2s}
+    .filter-button:hover,.filter-button:focus-visible{border-color:var(--plum);color:var(--deep)}
+    .filter-button.active{border-color:var(--plum);background:var(--plum);color:var(--white)}
+    .design-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .design-card{overflow:hidden;background:var(--cream);box-shadow:0 12px 28px #2b202a12}
+    .design-card[hidden]{display:none}
+    .design-image-wrap{overflow:hidden;aspect-ratio:4/3;background:#e7ddd4}
+    .design-image{width:100%;height:100%;object-fit:cover;transition:transform .45s ease,filter .3s ease}
+    .design-card:hover .design-image{filter:brightness(.98);transform:scale(1.035)}
+    .design-copy{padding:1.25rem 1.2rem 1.35rem;text-align:center}
+    .design-copy h3{margin:0;color:var(--deep);font:400 1.12rem/1.4 var(--serif)}
+    .formats{margin:.4rem 0 0;color:#765f6c;font-size:.62rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+
+    .message-band{display:grid;min-height:150px;padding:2.25rem 1.5rem;place-items:center;background:linear-gradient(135deg,#4e3042,var(--deep));color:var(--white);text-align:center}
+    .message-band p{max-width:760px;margin:0;font:400 clamp(1.2rem,2.4vw,1.75rem)/1.5 var(--serif);letter-spacing:.04em}
+
+    .newsletter-section{padding:3.5rem 1.5rem;background:var(--white)}
+    .newsletter-inner{display:grid;width:min(100%,1040px);margin-inline:auto;grid-template-columns:minmax(220px,.8fr) minmax(360px,1.2fr);align-items:center;gap:3rem}
+    .newsletter-title{margin:0;color:var(--deep);font:400 clamp(1.8rem,3vw,2.55rem)/1.2 var(--serif)}.newsletter-copy{margin:.65rem 0 0;color:#2b202aa8;font-size:.9rem;line-height:1.6}
+    .newsletter-form .formkit-alert{margin:0 0 .75rem;padding:.7rem;border-radius:4px;list-style:none;text-align:center}.newsletter-form .formkit-alert:empty{display:none}.newsletter-form .formkit-alert-error{background:#f9e8e5;color:#7a2f2a}
+    .newsletter-form .formkit-fields{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.65rem}.newsletter-form .formkit-field{min-width:0}.newsletter-form .formkit-input{width:100%;min-height:48px;padding:.75rem 1rem;border:1px solid #2b202a4d;border-radius:2px;background:var(--white);color:var(--ink)}
+    .newsletter-form .formkit-input:focus{border-color:var(--plum);outline:2px solid #5b354a24}.newsletter-form .formkit-submit{min-height:48px;padding:0;border:0;border-radius:2px;background:var(--plum);color:var(--white);cursor:pointer;font:500 .72rem var(--sans);letter-spacing:.13em;text-transform:uppercase}.newsletter-form .formkit-submit>span{display:block;padding:.85rem 1.35rem}.newsletter-form .formkit-submit:hover,.newsletter-form .formkit-submit:focus-visible{background:var(--deep)}.newsletter-form .formkit-spinner{display:none}.newsletter-form .formkit-powered-by-convertkit-container{margin-top:.45rem}.newsletter-form .formkit-powered-by-convertkit{color:#2b202a7d;font-size:.66rem;text-decoration:none}
+
+    .site-footer{background:var(--deep);border-top:1px solid #ffffff17}.footer-inner{display:grid;min-height:84px;width:min(100% - 3rem,1180px);margin-inline:auto;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem}.copyright,.footer-devotion{margin:0;color:#ffffff9e;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}.footer-devotion{justify-self:end}.social-links{display:flex;gap:.8rem}.social-links a{display:grid;width:34px;height:34px;place-items:center;border:1px solid #fffdf86b;border-radius:50%;color:var(--white);text-decoration:none;transition:.2s}.social-links svg{display:block;width:17px;height:17px}.social-links a:hover,.social-links a:focus-visible{background:#fffdf81a;border-color:var(--white);transform:translateY(-2px)}
+
+    @media(max-width:980px){.shop-hero{grid-template-columns:1fr 1fr}.format-grid,.design-grid{grid-template-columns:repeat(2,1fr)}.format-card:last-child{grid-column:1/-1;width:calc(50% - .55rem);justify-self:center}.newsletter-inner{grid-template-columns:1fr;gap:1.5rem;text-align:center}}
+    @media(max-width:900px){.nav-links{position:absolute;z-index:30;top:68px;right:1.5rem;display:none;width:min(280px,calc(100vw - 3rem));padding:1rem;flex-direction:column;align-items:stretch;gap:0;background:#f3f0e9fa;border:1px solid #2b202a29}.nav-links.open{display:flex}.nav-links a{display:block;padding:.75rem;color:var(--deep)}.menu-button{display:grid;width:42px;height:42px;place-items:center}.cart-item{display:none}.hero-copy{padding:4rem 2rem}}
+    @media(max-width:680px){.shell{width:min(100% - 2rem,1180px)}.site-header{min-height:68px;padding:0 .9rem}.header-mark{width:64px;height:60px}.shop-hero{min-height:640px;padding-top:68px;grid-template-columns:1fr;grid-template-rows:auto 260px}.hero-copy{padding:4.5rem 1.2rem 4rem;text-align:left}.hero-copy h1{font-size:clamp(2.65rem,12vw,3.65rem)}.hero-image{min-height:260px;background-position:center 54%}.format-section,.collection{padding:4rem 0}.section-heading{margin-bottom:1.75rem}.format-grid{grid-template-columns:1fr}.format-card:last-child{grid-column:auto;width:auto}.format-copy{min-height:auto}.filter-bar{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:.25rem}.filter-button{white-space:nowrap}.design-grid{grid-template-columns:1fr 1fr;gap:.75rem}.design-copy{padding:1rem .65rem 1.1rem}.design-copy h3{font-size:.92rem}.formats{font-size:.53rem;line-height:1.45}.newsletter-section{padding:3rem 1.25rem}.newsletter-form .formkit-fields{grid-template-columns:1fr}.newsletter-form .formkit-submit{width:100%}.footer-inner{grid-template-columns:1fr auto;padding:1.2rem 0}.footer-devotion{display:none}.social-links{justify-self:end}}
   </style>
 </head>
 <body>
@@ -35,58 +85,61 @@
   </header>
   <main>
     <section class="shop-hero">
-      <div class="hero-inner">
-        <h1>Shop the Collection</h1>
-        <p>Faith-rooted art, created with intention.</p>
-        <div class="filter-bar" role="group" aria-label="Filter the collection">
-          <button class="filter-button active" type="button" data-filter="all">All</button>
-          <button class="filter-button" type="button" data-filter="scripture">Scripture</button>
-          <button class="filter-button" type="button" data-filter="seasonal">Seasonal</button>
-          <button class="filter-button" type="button" data-filter="photography">Photography</button>
+      <div class="hero-copy">
+        <h1>Art for the Spaces You Call Home</h1>
+        <p>Scripture-inspired artwork created to bring truth, beauty, and encouragement into everyday spaces.</p>
+      </div>
+      <div class="hero-image" role="img" aria-label="Framed faith-inspired artwork displayed in a warm home setting"></div>
+    </section>
+
+    <section class="format-section" aria-labelledby="formats-title">
+      <div class="shell">
+        <div class="section-heading"><h2 id="formats-title">Choose Your Format</h2><p>Find the artwork you love, then choose the option that best fits your space and how you want to enjoy it.</p></div>
+        <div class="format-grid">
+          <article class="format-card"><img src="assets/digital-downloads.jpg" alt="Faith-inspired artwork displayed on a tablet"><div class="format-copy"><h3>Digital Download</h3><p>A high-resolution file for you to print and finish yourself.</p></div></article>
+          <article class="format-card"><img src="assets/framed-pieces.jpg" alt="Faith-inspired artwork displayed in a selected frame"><div class="format-copy"><h3>Framed Art</h3><p>Your chosen artwork printed, paired with a thoughtfully selected frame, and ready to display.</p></div></article>
+          <article class="format-card"><img src="assets/canvas.jpg" alt="Faith-inspired artwork displayed as a gallery-wrapped canvas"><div class="format-copy"><h3>Canvas</h3><p>Your chosen design professionally produced as a gallery-wrapped canvas.</p></div></article>
         </div>
       </div>
     </section>
-    <section class="catalog"><div class="shell">
+
+    <section class="collection" aria-labelledby="collection-title"><div class="shell">
+      <div class="section-heading"><h2 id="collection-title">Shop the Collection</h2><p>Browse the designs, then select your preferred format and size on the individual artwork page.</p></div>
+      <div class="filter-bar" role="group" aria-label="Filter the collection">
+        <button class="filter-button active" type="button" data-filter="all">All</button>
+        <button class="filter-button" type="button" data-filter="scripture">Scripture</button>
+        <button class="filter-button" type="button" data-filter="seasonal">Seasonal</button>
+        <button class="filter-button" type="button" data-filter="photography">Photography</button>
+      </div>
       <div class="design-grid">
-        <article class="design-card" data-category="scripture"><img class="design-image" src="assets/prints.jpg" alt="Trust in the Lord Scripture artwork with white lilies"><h3>Trust in the Lord</h3><p class="formats">Digital · Print · Framed · Canvas</p></article>
-        <article class="design-card" data-category="scripture"><img class="design-image" src="assets/digital-downloads.jpg" alt="Faith-inspired cross artwork"><h3>Faith</h3><p class="formats">Digital · Print · Framed · Canvas</p></article>
-        <article class="design-card" data-category="scripture"><img class="design-image" src="assets/framed-pieces.jpg" alt="Walk by Faith Scripture artwork"><h3>Walk by Faith</h3><p class="formats">Digital · Print · Framed · Canvas</p></article>
-        <article class="design-card" data-category="scripture"><img class="design-image" src="assets/canvas.jpg" alt="Be Still Scripture artwork"><h3>Be Still</h3><p class="formats">Digital · Print · Framed · Canvas</p></article>
-        <article class="design-card" data-category="scripture"><img class="design-image" src="assets/scripture-inspired.jpg" alt="Scripture-inspired cross artwork"><h3>Living Hope</h3><p class="formats">Digital · Print · Framed · Canvas</p></article>
-        <article class="design-card" data-category="seasonal"><img class="design-image" src="assets/seasonal-designs.jpg" alt="Seasonal Christian artwork"><h3>Seasonal Collection</h3><p class="formats">Digital · Print · Framed · Canvas</p></article>
-        <article class="design-card" data-category="photography"><img class="design-image" src="assets/photography-coming-soon.jpg" alt="Sunset photography from Shutter and Psalm"><h3>Photography Collection</h3><p class="formats">Fine-art photography · Coming soon</p></article>
+        <article class="design-card" data-category="scripture"><div class="design-image-wrap"><img class="design-image" src="assets/prints.jpg" alt="Trust in the Lord Scripture artwork with white lilies"></div><div class="design-copy"><h3>Trust in the Lord</h3><p class="formats">Digital · Framed · Canvas</p></div></article>
+        <article class="design-card" data-category="scripture"><div class="design-image-wrap"><img class="design-image" src="assets/digital-downloads.jpg" alt="Faith-inspired cross artwork"></div><div class="design-copy"><h3>Faith</h3><p class="formats">Digital · Framed · Canvas</p></div></article>
+        <article class="design-card" data-category="scripture"><div class="design-image-wrap"><img class="design-image" src="assets/framed-pieces.jpg" alt="Walk by Faith Scripture artwork"></div><div class="design-copy"><h3>Walk by Faith</h3><p class="formats">Digital · Framed · Canvas</p></div></article>
+        <article class="design-card" data-category="scripture"><div class="design-image-wrap"><img class="design-image" src="assets/canvas.jpg" alt="Be Still Scripture artwork"></div><div class="design-copy"><h3>Be Still</h3><p class="formats">Digital · Framed · Canvas</p></div></article>
+        <article class="design-card" data-category="scripture"><div class="design-image-wrap"><img class="design-image" src="assets/scripture-inspired.jpg" alt="Scripture-inspired cross artwork"></div><div class="design-copy"><h3>Living Hope</h3><p class="formats">Digital · Framed · Canvas</p></div></article>
+        <article class="design-card" data-category="seasonal"><div class="design-image-wrap"><img class="design-image" src="assets/seasonal-designs.jpg" alt="Seasonal Christian artwork"></div><div class="design-copy"><h3>Seasonal Collection</h3><p class="formats">Digital · Framed · Canvas</p></div></article>
+        <article class="design-card" data-category="photography"><div class="design-image-wrap"><img class="design-image" src="assets/photography-coming-soon.jpg" alt="Sunset photography from Shutter and Psalm"></div><div class="design-copy"><h3>Photography Collection</h3><p class="formats">Select formats · Coming soon</p></div></article>
       </div>
     </div></section>
+
     <section class="message-band"><p>Created to carry a message that matters.</p></section>
 
     <section class="newsletter-section" aria-labelledby="newsletter-title">
       <div class="newsletter-inner">
-        <h2 class="newsletter-title" id="newsletter-title">Stay in the Loop</h2>
-        <p class="newsletter-copy">Join the Shutter &amp; Psalm email list for new designs, shop updates, and occasional freebies.</p>
-        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-        <form action="https://app.kit.com/forms/9963234/subscriptions" class="seva-form formkit-form newsletter-form" method="post" data-sv-form="9963234" data-uid="e51b7fcd24" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;}},&quot;version&quot;:&quot;5&quot;}">
-          <div data-style="clean">
-            <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert" aria-live="polite"></ul>
-            <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
-              <div class="formkit-field">
-                <label for="shop-newsletter-email" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Email address</label>
-                <input id="shop-newsletter-email" class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" autocomplete="email" required type="email">
-              </div>
-              <button data-element="submit" class="formkit-submit" type="submit"><span>Join the List</span></button>
-            </div>
-            <div class="formkit-powered-by-convertkit-container">
-              <a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" target="_blank" rel="nofollow noopener">Built with Kit</a>
-            </div>
-          </div>
-        </form>
+        <div><h2 class="newsletter-title" id="newsletter-title">Join the List</h2><p class="newsletter-copy">Be the first to hear about new designs, shop updates, and occasional freebies.</p></div>
+        <div>
+          <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+          <form action="https://app.kit.com/forms/9963234/subscriptions" class="seva-form formkit-form newsletter-form" method="post" data-sv-form="9963234" data-uid="e51b7fcd24" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;}},&quot;version&quot;:&quot;5&quot;}">
+            <div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert" aria-live="polite"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><label for="shop-newsletter-email" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Email address</label><input id="shop-newsletter-email" class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" autocomplete="email" required type="email"></div><button data-element="submit" class="formkit-submit" type="submit"><span>Join the List</span></button></div><div class="formkit-powered-by-convertkit-container"><a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" target="_blank" rel="nofollow noopener">Built with Kit</a></div></div>
+          </form>
+        </div>
       </div>
     </section>
   </main>
-  <footer class="site-footer"><div class="footer-inner"><p class="copyright">© <span id="year"></span> Shutter &amp; Psalm</p><div class="social-links" aria-label="Social media links"><a href="https://www.instagram.com/shutterandpsalm/" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/profile.php?id=61583411422359" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Facebook" title="Facebook"><svg viewBox="0 0 320 512" aria-hidden="true"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a></div></div></footer>
+  <footer class="site-footer"><div class="footer-inner"><p class="copyright">© <span id="year"></span> Shutter &amp; Psalm</p><div class="social-links" aria-label="Social media links"><a href="https://www.instagram.com/shutterandpsalm/" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/profile.php?id=61583411422359" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Facebook" title="Facebook"><svg viewBox="0 0 320 512" aria-hidden="true"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a></div><p class="footer-devotion">Faith · Art · Everyday Grace</p></div></footer>
   <script>
     const menuButton=document.querySelector('.menu-button'),menu=document.querySelector('.nav-links');menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));document.querySelector('#year').textContent=new Date().getFullYear();
-    const filterButtons=document.querySelectorAll('.filter-button'),designCards=document.querySelectorAll('.design-card');
-    filterButtons.forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;filterButtons.forEach(item=>item.classList.toggle('active',item===button));designCards.forEach(card=>{card.hidden=filter!=='all'&&card.dataset.category!==filter})}));
+    const filterButtons=document.querySelectorAll('.filter-button'),designCards=document.querySelectorAll('.design-card');filterButtons.forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;filterButtons.forEach(item=>item.classList.toggle('active',item===button));designCards.forEach(card=>{card.hidden=filter!=='all'&&card.dataset.category!==filter})}));
   </script>
 </body>
 </html>
