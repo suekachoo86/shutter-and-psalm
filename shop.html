@@ -180,9 +180,9 @@
           </div>
         </fieldset>
 
-        <p class="format-description" id="format-description">A high-resolution digital file for personal use. No physical item will be shipped.</p>
+        <p class="format-description" id="format-description">One purchase includes high-resolution files for all five sizes: 8 × 10, 11 × 14, 16 × 20, 18 × 24, and 24 × 36. For personal use only; no physical item will be shipped.</p>
 
-        <fieldset class="option-group">
+        <fieldset class="option-group" id="size-group" hidden>
           <legend>Choose a size</legend>
           <div class="option-list" id="size-options">
             <button class="option-button selected" type="button" data-size="8 × 10" aria-pressed="true">8 × 10</button>
@@ -193,9 +193,10 @@
           </div>
         </fieldset>
 
-        <p class="product-price" id="product-price">Pricing coming soon</p>
+        <p class="product-price" id="product-price">$9.99</p>
+        <p class="preview-note" id="fulfillment-note">Instant digital delivery after checkout.</p>
         <button class="add-to-cart" type="button">Add to Cart</button>
-        <p class="preview-note">Preview only—ordering will be connected after your Square shop is set up.</p>
+        <p class="preview-note" id="checkout-note">Preview only—ordering will be connected after your Square shop is set up.</p>
         <p class="product-status" aria-live="polite"></p>
       </div>
     </div>
@@ -205,18 +206,28 @@
   <script>
     const menuButton=document.querySelector('.menu-button'),menu=document.querySelector('.nav-links');menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));document.querySelector('#year').textContent=new Date().getFullYear();
     const filterButtons=document.querySelectorAll('.filter-button'),designCards=document.querySelectorAll('.design-card');filterButtons.forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;filterButtons.forEach(item=>item.classList.toggle('active',item===button));designCards.forEach(card=>{card.hidden=filter!=='all'&&card.dataset.category!==filter})}));
-    const productModal=document.querySelector('#product-modal'),productClose=document.querySelector('.product-close'),productImage=document.querySelector('#product-image'),productTitle=document.querySelector('#product-title'),productStatus=document.querySelector('.product-status'),addToCart=document.querySelector('.add-to-cart');
-    const formatDescriptions={digital:'A high-resolution digital file for personal use. No physical item will be shipped.',framed:'Your artwork is printed and paired with a thoughtfully selected frame.',canvas:'A gallery-wrapped canvas arranged and fulfilled by Shutter & Psalm.'};
-    let scrollPosition=0,lastFocusedElement=null;
+    const productModal=document.querySelector('#product-modal'),productClose=document.querySelector('.product-close'),productImage=document.querySelector('#product-image'),productTitle=document.querySelector('#product-title'),productStatus=document.querySelector('.product-status'),addToCart=document.querySelector('.add-to-cart'),sizeGroup=document.querySelector('#size-group'),productPrice=document.querySelector('#product-price'),fulfillmentNote=document.querySelector('#fulfillment-note'),checkoutNote=document.querySelector('#checkout-note');
+    const formatDescriptions={digital:'One purchase includes high-resolution files for all five sizes: 8 × 10, 11 × 14, 16 × 20, 18 × 24, and 24 × 36. For personal use only; no physical item will be shipped.',framed:'Your artwork is printed and paired with a thoughtfully selected frame.',canvas:'Your gallery-wrapped canvas is printed and shipped directly by a professional production partner.'};
+    const prices={digital:9.99,framed:{'8 × 10':55,'11 × 14':75,'16 × 20':110,'18 × 24':null,'24 × 36':null},canvas:{'8 × 10':40,'11 × 14':50,'16 × 20':75,'18 × 24':95,'24 × 36':145}};
+    let scrollPosition=0,lastFocusedElement=null,currentFormat='digital',currentSize='8 × 10';
 
     function selectOption(button,groupSelector){document.querySelectorAll(groupSelector+' .option-button').forEach(option=>{const selected=option===button;option.classList.toggle('selected',selected);option.setAttribute('aria-pressed',String(selected))})}
+    function updateProductOptions(){
+      const isDigital=currentFormat==='digital',isCustom=currentFormat==='framed'&&prices.framed[currentSize]===null;
+      sizeGroup.hidden=isDigital;
+      document.querySelector('#format-description').textContent=formatDescriptions[currentFormat];
+      if(isDigital){productPrice.textContent='$9.99';fulfillmentNote.textContent='Includes all five digital sizes in one purchase.'}
+      else if(isCustom){productPrice.textContent='Custom quote';fulfillmentNote.textContent='Available by custom quote with local pickup or delivery only.'}
+      else{productPrice.textContent=`$${prices[currentFormat][currentSize].toFixed(2)}`;fulfillmentNote.textContent=currentFormat==='canvas'?'Shipping is calculated separately.':'Shipping is calculated separately for framed art.'}
+      addToCart.textContent=isCustom?'Request a Custom Quote':'Add to Cart';checkoutNote.hidden=isCustom;productStatus.textContent='';
+    }
     function openProduct(card){
       const cardImage=card.querySelector('.design-image'),cardTitle=card.querySelector('h3');
       scrollPosition=window.scrollY;lastFocusedElement=card;
       productImage.src=cardImage.currentSrc||cardImage.src;productImage.alt=cardImage.alt;productTitle.textContent=cardTitle.textContent;productStatus.textContent='';
       document.querySelectorAll('#format-options .option-button').forEach((button,index)=>{button.classList.toggle('selected',index===0);button.setAttribute('aria-pressed',String(index===0))});
       document.querySelectorAll('#size-options .option-button').forEach((button,index)=>{button.classList.toggle('selected',index===0);button.setAttribute('aria-pressed',String(index===0))});
-      document.querySelector('#format-description').textContent=formatDescriptions.digital;
+      currentFormat='digital';currentSize='8 × 10';updateProductOptions();
       productModal.hidden=false;document.body.classList.add('product-open');document.body.style.top=`-${scrollPosition}px`;productClose.focus();
     }
     function closeProduct(){
@@ -225,12 +236,12 @@
     }
 
     designCards.forEach(card=>{card.tabIndex=0;card.setAttribute('role','button');card.setAttribute('aria-label',`View purchase options for ${card.querySelector('h3').textContent}`);card.addEventListener('click',()=>openProduct(card));card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openProduct(card)}})});
-    document.querySelectorAll('#format-options .option-button').forEach(button=>button.addEventListener('click',()=>{selectOption(button,'#format-options');document.querySelector('#format-description').textContent=formatDescriptions[button.dataset.format];productStatus.textContent=''}));
-    document.querySelectorAll('#size-options .option-button').forEach(button=>button.addEventListener('click',()=>{selectOption(button,'#size-options');productStatus.textContent=''}));
+    document.querySelectorAll('#format-options .option-button').forEach(button=>button.addEventListener('click',()=>{selectOption(button,'#format-options');currentFormat=button.dataset.format;updateProductOptions()}));
+    document.querySelectorAll('#size-options .option-button').forEach(button=>button.addEventListener('click',()=>{selectOption(button,'#size-options');currentSize=button.dataset.size;updateProductOptions()}));
     productClose.addEventListener('click',closeProduct);
     productModal.addEventListener('click',event=>{if(event.target===productModal)closeProduct()});
     document.addEventListener('keydown',event=>{if(!productModal.hidden&&event.key==='Escape')closeProduct()});
-    addToCart.addEventListener('click',()=>{productStatus.textContent='This preview is ready—Square checkout will be connected next.'});
+    addToCart.addEventListener('click',()=>{if(currentFormat==='framed'&&prices.framed[currentSize]===null){window.location.href='contact.html';return}productStatus.textContent='This preview is ready—Square checkout will be connected next.'});
   </script>
 </body>
 </html>
