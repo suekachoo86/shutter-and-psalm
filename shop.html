@@ -298,7 +298,34 @@
     cartLink.addEventListener('click',event=>{event.preventDefault();menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false');openCart()});
     cartClose.addEventListener('click',closeCart);cartModal.addEventListener('click',event=>{if(event.target===cartModal)closeCart()});
     cartItems.addEventListener('click',event=>{const button=event.target.closest('[data-cart-action]');if(!button)return;const index=Number(button.dataset.cartIndex),action=button.dataset.cartAction;if(action==='increase')cart[index].quantity+=1;else if(action==='decrease'&&cart[index].quantity>1)cart[index].quantity-=1;else if(action==='remove')cart.splice(index,1);saveCart()});
-    cartCheckout.addEventListener('click',()=>{cartCheckoutStatus.textContent='Your cart is ready. Square checkout will be connected next.'});
+    // Sandbox integration: only Faithful & Just is supported while testing.
+    const squareCheckoutEndpoint='https://empty-bread-5a73.susanmfuller.workers.dev/checkout';
+    cartCheckout.textContent='Test Checkout with Square';
+    cartCheckoutStatus.textContent='';
+    cartCheckout.addEventListener('click',async()=>{
+      if(!cart.length)return;
+      if(cart.some(item=>item.title!=='Faithful & Just')){
+        cartCheckoutStatus.textContent='Test checkout currently supports Faithful & Just only. Remove other artwork to continue.';
+        return;
+      }
+      cartCheckout.disabled=true;
+      cartCheckoutStatus.textContent='Preparing Square Sandbox checkout… No real charges.';
+      try{
+        const response=await fetch(squareCheckoutEndpoint,{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({items:cart.map(({title,format,size,quantity})=>({title,format,size,quantity}))})
+        });
+        const data=await response.json();
+        if(!response.ok||!data.url||!data.url.startsWith('https://sandbox.square.link/')){
+          throw new Error(data.message||'Unable to open Square test checkout.');
+        }
+        window.location.assign(data.url);
+      }catch(error){
+        cartCheckoutStatus.textContent='Test checkout unavailable: '+error.message;
+        cartCheckout.disabled=false;
+      }
+    });
     renderCart();
   </script>
 </body>
