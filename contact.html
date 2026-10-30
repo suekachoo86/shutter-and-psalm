@@ -61,6 +61,12 @@
   <footer class="site-footer"><div class="footer-inner"><p class="copyright">© <span id="year"></span> Shutter &amp; Psalm</p><div class="social-links" aria-label="Social media links"><a href="https://www.instagram.com/shutterandpsalm/" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/profile.php?id=61583411422359" target="_blank" rel="noopener noreferrer" aria-label="Follow Shutter and Psalm on Facebook"><svg viewBox="0 0 320 512" aria-hidden="true"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a></div></div></footer>
   <script>
     const menuButton=document.querySelector('.menu-button'),menu=document.querySelector('.nav-links');menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));document.querySelector('#year').textContent=new Date().getFullYear();
+    const requestParams=new URLSearchParams(window.location.search),requestType=requestParams.get('request'),requestDesign=requestParams.get('design'),requestFormat=requestParams.get('format'),requestSize=requestParams.get('size');
+    if((requestType==='local'||requestType==='custom')&&requestDesign&&requestFormat&&requestSize){
+      const isCustom=requestType==='custom',subject=document.querySelector('#subject'),message=document.querySelector('#message');
+      subject.value=`${isCustom?'Custom framed art':'Local pickup or delivery'} request — ${requestDesign}`;
+      message.value=`I’m interested in ordering:\n\nDesign: ${requestDesign}\nFormat: ${requestFormat}\nSize: ${requestSize}\nFulfillment: ${isCustom?'Custom quote with local pickup or delivery':'Local pickup or delivery near Gainesville, Georgia'}\n\nAdditional details:\n`;
+    }
   </script>
   <script src="https://js.usebasin.com/v2.11.1.min.js" defer></script>
 </body>
