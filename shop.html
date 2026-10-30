@@ -71,6 +71,9 @@
     .add-to-cart{width:100%;min-height:52px;padding:.9rem 1.2rem;border:1px solid var(--plum);background:var(--plum);color:var(--white);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.2s}
     .add-to-cart:hover,.add-to-cart:focus-visible{background:var(--deep);border-color:var(--deep)}
     .preview-note{margin:.75rem 0 0;color:#2b202a85;font-size:.69rem;line-height:1.5;text-align:center}
+    .local-request{margin:.65rem 0 .75rem;color:#2b202ab8;font-size:.7rem;line-height:1.55;text-align:center}
+    .local-request a{color:var(--plum);font-weight:600;text-underline-offset:.2rem}
+    .local-request a:hover,.local-request a:focus-visible{color:var(--deep)}
     .product-status{min-height:1.3em;margin:.55rem 0 0;color:var(--plum);font-size:.72rem;font-weight:600;text-align:center}
     .product-close{position:absolute;z-index:4;top:.85rem;right:.85rem;display:grid;width:44px;height:44px;padding:0;place-items:center;border:1px solid #5b354a4d;border-radius:50%;background:var(--white);color:var(--deep);cursor:pointer;box-shadow:0 5px 18px #2b202a1c}
     .product-close:hover,.product-close:focus-visible{background:var(--plum);color:var(--white);outline:none}
@@ -217,6 +220,7 @@
 
         <p class="product-price" id="product-price">$9.99</p>
         <p class="preview-note" id="fulfillment-note">Instant digital delivery after checkout.</p>
+        <p class="local-request" id="local-request" hidden>Near Gainesville, Georgia? <a id="local-request-link" href="contact.html">Request local pickup or delivery and skip shipping.</a></p>
         <button class="add-to-cart" type="button">Add to Cart</button>
         <p class="preview-note" id="checkout-note">Your selections will be saved here and checked out securely through Square.</p>
         <p class="product-status" aria-live="polite"></p>
@@ -243,7 +247,7 @@
   <script>
     const menuButton=document.querySelector('.menu-button'),menu=document.querySelector('.nav-links');menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));document.querySelector('#year').textContent=new Date().getFullYear();
     const filterButtons=document.querySelectorAll('.filter-button'),designCards=document.querySelectorAll('.design-card');filterButtons.forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;filterButtons.forEach(item=>item.classList.toggle('active',item===button));designCards.forEach(card=>{card.hidden=filter!=='all'&&card.dataset.category!==filter})}));
-    const productModal=document.querySelector('#product-modal'),productDialog=document.querySelector('.product-dialog'),productVisual=document.querySelector('.product-visual'),productDetails=document.querySelector('.product-details'),productClose=document.querySelector('.product-close'),productImage=document.querySelector('#product-image'),productTitle=document.querySelector('#product-title'),productStatus=document.querySelector('.product-status'),addToCart=document.querySelector('.add-to-cart'),sizeGroup=document.querySelector('#size-group'),productPrice=document.querySelector('#product-price'),fulfillmentNote=document.querySelector('#fulfillment-note'),checkoutNote=document.querySelector('#checkout-note');
+    const productModal=document.querySelector('#product-modal'),productDialog=document.querySelector('.product-dialog'),productVisual=document.querySelector('.product-visual'),productDetails=document.querySelector('.product-details'),productClose=document.querySelector('.product-close'),productImage=document.querySelector('#product-image'),productTitle=document.querySelector('#product-title'),productStatus=document.querySelector('.product-status'),addToCart=document.querySelector('.add-to-cart'),sizeGroup=document.querySelector('#size-group'),productPrice=document.querySelector('#product-price'),fulfillmentNote=document.querySelector('#fulfillment-note'),localRequest=document.querySelector('#local-request'),localRequestLink=document.querySelector('#local-request-link'),checkoutNote=document.querySelector('#checkout-note');
     const cartLink=document.querySelector('.cart-link'),cartCount=document.querySelector('.cart-count'),cartModal=document.querySelector('#cart-modal'),cartClose=document.querySelector('.cart-close'),cartItems=document.querySelector('#cart-items'),cartTotal=document.querySelector('#cart-total'),cartCheckout=document.querySelector('.cart-checkout'),cartCheckoutStatus=document.querySelector('.cart-checkout-status');
     const formatDescriptions={digital:'One purchase includes high-resolution files for all five sizes: 8 × 10, 11 × 14, 16 × 20, 18 × 24, and 24 × 36. For personal use only; no physical item will be shipped.',framed:'Your artwork is printed and paired with a thoughtfully selected frame.',canvas:'Your gallery-wrapped canvas is printed and shipped directly by a professional production partner.'};
     const prices={digital:9.99,framed:{'8 × 10':55,'11 × 14':75,'16 × 20':null,'18 × 24':null,'24 × 36':null},canvas:{'8 × 10':40,'11 × 14':50,'16 × 20':75,'18 × 24':95,'24 × 36':145}};
@@ -508,6 +512,7 @@
     function cartFormatKey(item){if(item.formatKey)return item.formatKey;return {'Digital Download':'digital','Framed Art':'framed','Canvas':'canvas'}[item.format]||''}
     function canonicalPriceSize(size){const parts=String(size).replace(/×/g,'x').match(/\d+/g)?.map(Number)||[];if(parts.length!==2)return size;parts.sort((a,b)=>a-b);return `${parts[0]} × ${parts[1]}`}
     function priceFor(format,size){return prices[format]?.[canonicalPriceSize(size)]}
+    function contactRequestUrl(requestType){const params=new URLSearchParams({request:requestType,design:productTitle.textContent,format:'Framed Art',size:currentSize});return `contact.html?${params.toString()}`}
     function configureSizeOptions(title){const sizes=landscapeDesigns.has(title)?['10 × 8','14 × 11','20 × 16','24 × 18','36 × 24']:['8 × 10','11 × 14','16 × 20','18 × 24','24 × 36'];document.querySelectorAll('#size-options .option-button').forEach((button,index)=>{button.dataset.size=sizes[index];button.textContent=sizes[index]});currentSize=sizes[0]}
     let scrollPosition=0,lastFocusedElement=null,currentFormat='digital',currentSize='8 × 10',cart=[];
     try{
@@ -524,6 +529,8 @@
       if(isDigital){productPrice.textContent='$9.99';fulfillmentNote.textContent='Includes all five digital sizes in one purchase.'}
       else if(isCustom){productPrice.textContent='Custom quote';fulfillmentNote.textContent='Available by custom quote with local pickup or delivery only.'}
       else{productPrice.textContent=`${selectedPrice.toFixed(2)}`;fulfillmentNote.textContent=currentFormat==='canvas'?'Shipping is calculated separately.':'Shipping is calculated separately for framed art.'}
+      localRequest.hidden=currentFormat!=='framed'||isCustom;
+      if(!localRequest.hidden)localRequestLink.href=contactRequestUrl('local');
       addToCart.textContent=isCustom?'Request a Custom Quote':'Add to Cart';checkoutNote.hidden=isCustom;productStatus.textContent='';
     }
     function openProduct(card){
@@ -557,7 +564,7 @@
     productModal.addEventListener('click',event=>{if(event.target===productModal)closeProduct()});
     document.addEventListener('keydown',event=>{if(event.key!=='Escape')return;if(!cartModal.hidden)closeCart();else if(!productModal.hidden)closeProduct()});
     addToCart.addEventListener('click',()=>{
-      if(currentFormat==='framed'&&priceFor('framed',currentSize)===null){window.location.href='contact.html';return}
+      if(currentFormat==='framed'&&priceFor('framed',currentSize)===null){window.location.href=contactRequestUrl('custom');return}
       const formatLabels={digital:'Digital Download',framed:'Framed Art',canvas:'Canvas'},size=currentFormat==='digital'?'All five sizes':currentSize,price=currentFormat==='digital'?prices.digital:priceFor(currentFormat,currentSize),key=`${productTitle.textContent}|${currentFormat}|${size}`,variationId=catalogVariationId(productTitle.textContent,currentFormat,currentSize),existing=cart.find(item=>item.key===key);
       if(!variationId){productStatus.textContent='This option is not available in Square yet.';return}
       if(existing){existing.quantity+=1;existing.variationId=existing.variationId||variationId;existing.formatKey=existing.formatKey||currentFormat}else cart.push({key,title:productTitle.textContent,format:formatLabels[currentFormat],formatKey:currentFormat,size,price,image:productImage.src,variationId,quantity:1});
