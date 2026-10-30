@@ -245,7 +245,7 @@
     const productModal=document.querySelector('#product-modal'),productClose=document.querySelector('.product-close'),productImage=document.querySelector('#product-image'),productTitle=document.querySelector('#product-title'),productStatus=document.querySelector('.product-status'),addToCart=document.querySelector('.add-to-cart'),sizeGroup=document.querySelector('#size-group'),productPrice=document.querySelector('#product-price'),fulfillmentNote=document.querySelector('#fulfillment-note'),checkoutNote=document.querySelector('#checkout-note');
     const cartLink=document.querySelector('.cart-link'),cartCount=document.querySelector('.cart-count'),cartModal=document.querySelector('#cart-modal'),cartClose=document.querySelector('.cart-close'),cartItems=document.querySelector('#cart-items'),cartTotal=document.querySelector('#cart-total'),cartCheckout=document.querySelector('.cart-checkout'),cartCheckoutStatus=document.querySelector('.cart-checkout-status');
     const formatDescriptions={digital:'One purchase includes high-resolution files for all five sizes: 8 × 10, 11 × 14, 16 × 20, 18 × 24, and 24 × 36. For personal use only; no physical item will be shipped.',framed:'Your artwork is printed and paired with a thoughtfully selected frame.',canvas:'Your gallery-wrapped canvas is printed and shipped directly by a professional production partner.'};
-    const prices={digital:9.99,framed:{'8 × 10':55,'11 × 14':75,'16 × 20':110,'18 × 24':null,'24 × 36':null},canvas:{'8 × 10':40,'11 × 14':50,'16 × 20':75,'18 × 24':95,'24 × 36':145}};
+    const prices={digital:9.99,framed:{'8 × 10':55,'11 × 14':75,'16 × 20':null,'18 × 24':null,'24 × 36':null},canvas:{'8 × 10':40,'11 × 14':50,'16 × 20':75,'18 × 24':95,'24 × 36':145}};
     const landscapeDesigns=new Set(['Wonderful Counselor']);
     const squareCatalog={
   "angels we have heard on high|canvas|8x10": "ZHNG2HI7OXD2XC5RQSCPB2D3",
@@ -509,7 +509,11 @@
     function priceFor(format,size){return prices[format]?.[canonicalPriceSize(size)]}
     function configureSizeOptions(title){const sizes=landscapeDesigns.has(title)?['10 × 8','14 × 11','20 × 16','24 × 18','36 × 24']:['8 × 10','11 × 14','16 × 20','18 × 24','24 × 36'];document.querySelectorAll('#size-options .option-button').forEach((button,index)=>{button.dataset.size=sizes[index];button.textContent=sizes[index]});currentSize=sizes[0]}
     let scrollPosition=0,lastFocusedElement=null,currentFormat='digital',currentSize='8 × 10',cart=[];
-    try{const savedCart=JSON.parse(localStorage.getItem('shutterPsalmCart')||'[]');cart=Array.isArray(savedCart)?savedCart:[]}catch(error){cart=[]}
+    try{
+      const savedCart=JSON.parse(localStorage.getItem('shutterPsalmCart')||'[]');
+      cart=Array.isArray(savedCart)?savedCart.filter(item=>!(cartFormatKey(item)==='framed'&&priceFor('framed',item.size)===null)):[];
+      localStorage.setItem('shutterPsalmCart',JSON.stringify(cart));
+    }catch(error){cart=[]}
 
     function selectOption(button,groupSelector){document.querySelectorAll(groupSelector+' .option-button').forEach(option=>{const selected=option===button;option.classList.toggle('selected',selected);option.setAttribute('aria-pressed',String(selected))})}
     function updateProductOptions(){
