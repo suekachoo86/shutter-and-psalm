@@ -102,6 +102,10 @@
   <script>
     const menuButton=document.querySelector('.menu-button'),menu=document.querySelector('.nav-links');menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));document.querySelector('#year').textContent=new Date().getFullYear();
   </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"219b1e07aae54a12b8b997e34a51293e"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 <!-- Refresh GitHub Pages deployment: Hero.jpg -->
