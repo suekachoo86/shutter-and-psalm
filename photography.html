@@ -190,5 +190,9 @@
     lightbox.addEventListener('click',event=>{if(event.target===lightbox)lightbox.close()});
     lightbox.addEventListener('close',()=>{document.body.style.position='';document.body.style.top='';document.body.style.width='';document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,galleryScrollY);requestAnimationFrame(()=>document.documentElement.style.scrollBehavior='')});
   </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"219b1e07aae54a12b8b997e34a51293e"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
